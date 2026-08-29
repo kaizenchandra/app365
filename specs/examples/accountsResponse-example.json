@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "id": "f4854665-ab24-4c27-b4f1-b51a90ccae83",
+      "candidateId": "b4449c79-8dab-45e6-821a-d669a86e30ff",
+      "subdomain": "maxcredi",
+      "firstName": "Shanna",
+      "lastName": "Booker",
+      "email": "beckblack@syntac.com",
+      "phone": "8585463680",
+      "phoneCountryCode": "1",
+      "candidateFor": "President",
+      "configuration": {
+        "crm": {
+          "baseUrl": "http://192.168.1.200:8090/api/v1",
+          "idCardRequireDashes": true
+        }
+      }
+    }
+  ],
+  "pagination": {
+    "totalPages": 1,
+    "totalElements": 1,
+    "page": 0,
+    "size": 10,
+    "numberOfElements": 1
+  }
+}

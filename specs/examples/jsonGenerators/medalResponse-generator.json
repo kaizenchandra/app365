@@ -1,0 +1,10 @@
+{
+  "id": '{{guid()}}',
+  "name": '{{lorem(1, "words")}}',
+  "description": '{{lorem(1, "sentences")}}',
+  "picture": 'http://placehold.it/400x300',
+  "point": '{{integer(1, 100)}}',
+  "createdAt": '{{date(new Date(2018, 0, 1), new Date(2020, 0, 1), "YYYY-MM-ddTHH:mm:ssZ")}}',
+  "instructions": '{{lorem(1, "sentences")}}',
+  "benefits": '{{lorem(5, "sentences")}}'
+}

@@ -1,0 +1,7 @@
+[
+  '{{repeat(10, 10)}}',
+  {
+    "id": '{{guid()}}',
+    "name": '{{lorem (1, "sentences")}}'
+  }
+]

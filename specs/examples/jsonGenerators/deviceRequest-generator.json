@@ -1,0 +1,5 @@
+{
+  "deviceId": '{{guid()}}',
+  "platform": '{{random("android", "ios")}}',
+  "firebaseToken": '{{guid()}}'
+}

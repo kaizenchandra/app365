@@ -1,0 +1,72 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "picture": {
+            "type": "string"
+          },
+          "point": {
+            "type": "integer"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "description",
+          "picture",
+          "point",
+          "createdAt"
+        ]
+      }
+    },
+    "pagination": {
+      "type": "object",
+      "properties": {
+        "totalPages": {
+          "type": "integer"
+        },
+        "totalElements": {
+          "type": "integer"
+        },
+        "page": {
+          "type": "integer"
+        },
+        "pageSize": {
+          "type": "integer"
+        },
+        "numberOfElements": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "totalPages",
+        "totalElements",
+        "page",
+        "size",
+        "numberOfElements"
+      ]
+    }
+  },
+  "required": [
+    "data",
+    "pagination"
+  ]
+}

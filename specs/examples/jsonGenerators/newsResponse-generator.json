@@ -1,0 +1,33 @@
+{
+  "id": '{{guid()}}',
+  "title": '{{lorem(5, "words")}}',
+  "content": '{{lorem(2, "paragraphs")}}',
+  "createdAt": '{{date(new Date(2018, 0, 1), new Date(2020, 0, 1), "YYYY-MM-ddTHH:mm:ssZ")}}',
+  "coverPicture": 'http://placehold.it/400x300',
+  "isFlagged": '{{bool()}}',
+  "summary": {
+    "joinCount": '{{integer(1, 100)}}',
+    "shareCount": '{{integer(1, 100)}}',
+    "commentCount": '{{integer(1, 100)}}',
+    "likeCount": '{{integer(1, 100)}}'
+  },
+  "meta": {
+    "lastComment": {
+      "content": '{{lorem(3, "sentences")}}',
+      "createdAt": '{{date(new Date(2018, 0, 1), new Date(2020, 0, 1), "YYYY-MM-ddTHH:mm:ssZ")}}',
+      "owner": {
+        "id": '{{guid()}}',
+        "fullName": '{{firstName()}} {{surname()}}',
+        "profilePicture": 'http://placehold.it/400x300'
+      }
+    },
+    "user": {
+      "liked": '{{bool()}}',
+      "commented": '{{bool()}}',
+      "shared": '{{bool()}}'
+    }
+  },
+  "cursor": {
+    "next": '{{guid()}}'
+  }
+}

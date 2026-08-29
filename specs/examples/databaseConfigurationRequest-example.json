@@ -1,0 +1,11 @@
+{
+  "host": "localhost",
+  "port": 3306,
+  "database": "sample",
+  "service": "API",
+  "user": "root",
+  "password": "hello123",
+  "driverClassName": "com.mysql.jdbc.Driver",
+  "driver": "mysql",
+  "connectionParameters": "useTimezone=true&serverTimezone=UTC&useLegacyDatetimeCode=false"
+}

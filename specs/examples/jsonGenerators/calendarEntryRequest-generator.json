@@ -1,0 +1,4 @@
+{
+  "platform": '{{random("android", "ios")}}',
+  "calendarId": '{{guid()}}'
+}

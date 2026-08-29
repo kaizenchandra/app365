@@ -1,0 +1,7 @@
+{
+  "source": "1079b951-9ee3-4da9-98fd-c007e2dc17c1",
+  "amount": 5,
+  "currency": "usd",
+  "paymentProcessor": "stripe",
+  "description": "Special gift to my favorite candidate"
+}

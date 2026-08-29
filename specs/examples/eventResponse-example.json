@@ -1,0 +1,52 @@
+{
+  "id": "a3c784a1-3fb2-4f31-9043-0a92803e85c9",
+  "title": "laborum culpa esse aliqua minim",
+  "content": "Lorem ullamco irure aliquip consequat voluptate non duis. Ea reprehenderit reprehenderit aliquip pariatur irure et mollit dolor id aute labore est excepteur. Excepteur ea Lorem do qui labore duis velit aliqua Lorem ex non aliqua ipsum amet.\r\nIn non reprehenderit sunt nulla sint veniam ad. Commodo eiusmod amet excepteur amet enim enim sit cillum exercitation. Magna nostrud nisi consectetur aliquip officia in sunt eu mollit pariatur ut ad.\r\n",
+  "startDate": "2019-07-28T14:19:47+04:00",
+  "createdAt": "2019-09-29T17:46:31+04:00",
+  "coverPicture": "http://placehold.it/400x300",
+  "isFlagged": true,
+  "location": {
+    "address": "582 Suydam Street, Carrsville, Pennsylvania, 1272",
+    "geo": {
+      "lat": 38.058312,
+      "lon": 10.562335
+    }
+  },
+  "summary": {
+    "joinCount": 95,
+    "shareCount": 17,
+    "commentCount": 91,
+    "likeCount": 36
+  },
+  "meta": {
+    "lastComment": {
+      "content": "Aute non et eiusmod quis est. In officia elit eiusmod dolor adipisicing do ad ipsum anim. Duis dolor eiusmod dolore nisi minim.",
+      "createdAt": "2018-08-27T02:03:39+04:00",
+      "owner": {
+        "id": "98b9c795-8165-4b52-9cdf-dfddbad2d6d5",
+        "fullName": "Robert Lucas",
+        "profilePicture": "http://placehold.it/400x300"
+      }
+    },
+    "user": {
+      "liked": false,
+      "commented": true,
+      "shared": true,
+      "joined": true,
+      "calendars": [
+        {
+          "platform": "android",
+          "calendarId": "d4742248-74f5-49aa-95f2-1ffbdd23d402"
+        },
+        {
+          "platform": "ios",
+          "calendarId": "dd902e26-9ed2-408b-a0b5-564d44331331"
+        }
+      ]
+    }
+  },
+  "cursor": {
+    "next": "97c126f6-98e2-4220-89c9-b868179bbf90"
+  }
+}

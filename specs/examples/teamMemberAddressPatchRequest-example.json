@@ -1,0 +1,26 @@
+{
+  "country": {
+    "id": ""
+  },
+  "state": {
+    "id": "",
+    "name": ""
+  },
+  "municipality": {
+    "id": "",
+    "name": ""
+  },
+  "city": {
+    "id": "",
+    "name": ""
+  },
+  "sector": {
+    "id": "",
+    "name": ""
+  },
+  "street": "Manzana AA",
+  "home": "4",
+  "apartment": "B",
+  "zipCode": "12345",
+  "reference": ""
+}

@@ -1,0 +1,229 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "data",
+    "pagination"
+  ],
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "idCard",
+          "firstName",
+          "lastName",
+          "fullName",
+          "profilePicture",
+          "birthDate",
+          "age",
+          "memberSince",
+          "address",
+          "team"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "idCard": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "fullName": {
+            "type": "string"
+          },
+          "profilePicture": {
+            "type": "string"
+          },
+          "birthDate": {
+            "type": "string"
+          },
+          "age": {
+            "type": "integer"
+          },
+          "memberSince": {
+            "type": "string"
+          },
+          "address": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "country",
+              "state",
+              "municipality",
+              "city",
+              "sector",
+              "line",
+              "street",
+              "home",
+              "apartment",
+              "zipCode",
+              "reference",
+              "fullAddress"
+            ],
+            "properties": {
+              "country": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "id",
+                  "iso2",
+                  "name"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "iso2": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              },
+              "state": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "id",
+                  "name"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              },
+              "municipality": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "id",
+                  "name"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              },
+              "city": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "id",
+                  "name"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              },
+              "sector": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "id",
+                  "name"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              },
+              "line": {
+                "type": "string"
+              },
+              "street": {
+                "type": "string"
+              },
+              "home": {
+                "type": "string"
+              },
+              "apartment": {
+                "type": "string"
+              },
+              "zipCode": {
+                "type": "string"
+              },
+              "reference": {
+                "type": "string"
+              },
+              "fullAddress": {
+                "type": "string"
+              }
+            }
+          },
+          "team": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "levelCount",
+              "memberCount"
+            ],
+            "properties": {
+              "levelCount": {
+                "type": "integer"
+              },
+              "memberCount": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    },
+    "pagination": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "totalPages",
+        "totalElements",
+        "page",
+        "size",
+        "numberOfElements"
+      ],
+      "properties": {
+        "totalPages": {
+          "type": "integer"
+        },
+        "totalElements": {
+          "type": "integer"
+        },
+        "page": {
+          "type": "integer"
+        },
+        "size": {
+          "type": "integer"
+        },
+        "numberOfElements": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

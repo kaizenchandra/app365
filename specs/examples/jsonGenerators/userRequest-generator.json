@@ -1,0 +1,6 @@
+{
+  "email": '{{email(true)}}',
+  "phone": '+1 {{phone()}}',
+  "password": '{{lorem(1, "words")}}{{integer(1000,9999)}}',
+  "phoneCountryCode": '{{integer(1,999999)}}'
+}

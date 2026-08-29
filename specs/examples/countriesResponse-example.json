@@ -1,0 +1,52 @@
+[
+  {
+    "id": "d249c20b-6af8-468d-9ca3-b0591fc56a41",
+    "iso2": "BB",
+    "name": "Saudi Arabia"
+  },
+  {
+    "id": "f3d0459b-4294-468b-81a5-b56ca098271f",
+    "iso2": "LR",
+    "name": "Togo"
+  },
+  {
+    "id": "b9a6bbf4-c826-4ac0-ad8e-a27036478436",
+    "iso2": "KM",
+    "name": "Nauru"
+  },
+  {
+    "id": "5e158974-a329-4569-990b-d059b71708de",
+    "iso2": "SK",
+    "name": "Malaysia"
+  },
+  {
+    "id": "f4637502-f79f-4be6-b065-fa14a188e9de",
+    "iso2": "KY",
+    "name": "Ghana"
+  },
+  {
+    "id": "13ead97f-6e6e-4cf1-b784-33b134a78e48",
+    "iso2": "BW",
+    "name": "Gabon"
+  },
+  {
+    "id": "29fa0e95-cb9b-4d83-b68a-0707e1050a39",
+    "iso2": "MA",
+    "name": "Korea (North)"
+  },
+  {
+    "id": "00c88c5a-8727-42be-9af2-fc55ffb95b8d",
+    "iso2": "LT",
+    "name": "Cuba"
+  },
+  {
+    "id": "3184798b-ac25-4f76-93e5-c784d3c26f3b",
+    "iso2": "TM",
+    "name": "Bhutan"
+  },
+  {
+    "id": "726c483b-4972-42af-a26b-554b4ed885b9",
+    "iso2": "BJ",
+    "name": "Bouvet Island"
+  }
+]

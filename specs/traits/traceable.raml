@@ -1,0 +1,22 @@
+headers:
+  User-Agent:
+    type: string
+    description: The user agent name
+    example: ApplePolitical365/1.0.0-175 (Android 6.0)
+  Accept-Language:
+    type: string
+    description: The app accepted language
+    example: es;q=1
+  X-TZ-Id:
+    type: string
+    description: The user timezone
+    example: America/New_York
+  X-TZ-Offset:
+    type: integer
+    description: The user timezone offset
+    example: -16200000
+  X-Tracker:
+    type: string
+    description: A code to track API calls end to end
+    pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$
+    example: 59028bba-1179-40c2-a31a-7ec46573eb22

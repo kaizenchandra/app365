@@ -1,0 +1,219 @@
+---
+spring:
+  profiles:
+    active: ${ENVIRONMENT}
+  social:
+    facebook:
+      app-id: ${FB_API_KEY}
+      app-secret: ${FB_API_SECRET}
+      poll-delay: 60
+    twitter:
+      app-id: ${TWITTER_API_KEY}
+      app-secret: ${TWITTER_API_SECRET}
+      poll-delay: 60
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${SMTP_USER}
+    password: ${SMTP_PASS}
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+    scheduler:
+      persistence:
+        enabled: false
+        redis:
+          enabled: false
+          embedded: false
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 10MB
+      max-request-size: 15MB
+
+app365:
+  test: Sample
+  cronjobs:
+    cron-job-run-frequency: 60000
+    cron-job-run-initial-delay: 10000
+  non-protected-endpoints:
+    get-endpoints:
+      - "/status/health"
+      - "/accounts/me"
+      - "/slides"
+      - "/manage/*"
+      - "/countries"
+    post-endpoints:
+      - "/accounts"
+      - "/users"
+      - "/users/social/signin"
+      - "/users/{\\.}/phoneVerification/resendCode"
+      - "/users/phoneVerification/resendCode"
+      - "/auth/password/reset"
+    put-endpoints:
+      - "/users/{\\.}/phoneVerification"
+      - "/auth/password/reset"
+  domain: applepolitical.lan
+  subdomain-regex: "([a-z0-9-]{6,63})(?=\\.applepolitical\\.lan)"
+  oauth:
+    client-id: ${OAUTH_CLIENT_ID}
+    client-secret: ${OAUTH_CLIENT_SECRET}
+    resource-id: OAUTH_CLIENT_APP_365
+    realm: APPLE_POLITICAL_365
+    type-name: Bearer
+    base-url: ${OAUTH_URL}
+  twilio:
+    api-key: ${TWILIO_API_KEY}
+    max-phone-verification-code-per-minute: 1
+    max-phone-verification-code-per-day: 3
+  textmagic:
+    username: ${TEXT_MAGIC_USERNAME}
+    api-key: ${TEXT_MAGIC_API_KEY}
+    phone-number: ${TEXT_MAGIC_NUMBER}
+    max-phone-verification-code-per-minute: 1
+    max-phone-verification-code-per-day: 3
+  stripe:
+    api-key: ${STRIPE_API_KEY}
+    http:
+      connection-timeout: 30
+      read-timeout: 80
+  google:
+    oauth2:
+      token-endpoint: https://www.googleapis.com/oauth2/v4/token
+      config-file-path: prm-oficial-oauth2-service-account-key.json
+    firebase:
+      service-account-key-path: prm-oficial-firebase-adminsdk-service-account-key.json
+      database:
+        url: https://app365.firebaseio.com
+  digitalocean:
+    spaces:
+      key: ${DO_API_KEY}
+      secret: ${DO_API_SECRET}
+      endpoint: https://app365.nyc3.digitaloceanspaces.com
+      region: nyc3
+  crm:
+    get-endpoints:
+      cbaUser: "/api/v1/team"
+      associatedOrganisms: "/api/v1/associated"
+      address:
+        countries: "/api/v1/countries"
+        states: "/api/v1/countries/{id}/states"
+        municipalities: "/api/v1/countries/states/{id}/municipalities"
+        cities: "/api/v1/countries/states/municipalities/{id}/cities"
+        sectors: "/api/v1/countries/states/municipalities/cities/sectors/{id}/demarcation"
+        sections: "/api/v1/countries/states/municipalities/cities/{id}/sectors"
+        districtByCountry: "/api/v1/district/{id}/country"
+        districtByState: "/api/v1/district/country/{id}/state"
+        statesByCountryAndDistrict: "/api/v1/countries/{id}/district/{districtID}/states"
+        municipalitiesByDistrict: "/api/v1/countries/states/district/{id}/municipalities"
+        regionByMunicipalityAndDistrict: "/api/v1/municipal-region/{id}/municipality/{districtID}/district"
+        zoneByMunicipalityAndDistrict: "/api/v1/zone/{id}/municipality/{districtID}/district"
+        zoneByMunicipalDistrict: "/api/v1/zone/municipality/{id}/cities"
+        zoneByRegion: "/api/v1/zone/cities/{id}/municipal-region"
+      place: "/api/v1/countries/states/municipalities/{id}/place"
+      precinct: "/api/v1/countries/states/municipalities/cities/places/{id}/precinct"
+      militant: "/api/v1/members"
+      members: "/api/v1/team/members"
+      levels: "/api/v1/team/levels"
+      electoralCollege: "/api/v1/electoral-college"
+      teamMembersEmailAddress: "/api/v1/campaign/team/members/email/validate"
+      militantsEmailAddress: "/api/v1/campaign/militants/email/validate"
+      teamMembersPhoneNumber: "/api/v1/campaign/team/members/phone/{type}/validate"
+      militantsPhoneNumber: "/api/v1/campaign/militants/phone/{type}/validate"
+      supportSource: "/api/v1/support-source"
+      associatedOrganissmBySupportSource: "/api/v1/associated/{id}/support-source"
+      getAddress: "/api/v1/apps-user-address"
+    post-endpoints:
+      token: "/oauth/token"
+      userAsMembers: "/api/v1/members"
+      members: "/api/v1/team/members"
+      militant: "/api/v1/campaign/members"
+      cbaHeader: "/api/v1/team/"
+      addAddress: "/api/v1/apps-user-address"
+    put-endpoints:
+      address: "/api/v1/campaign/team/members/{id}/address"
+      members: "/api/v1/members"
+      militant: "/api/v1/campaign/members"
+  messages:
+    verification-message-en: "Thank you for downloading the APP of the Partido Revolucionario Moderno, your verification code is: %s"
+    verification-message-es: "Gracias por descargar el APP del Partido Revolucionario Moderno, su codigo de verificacion es: %s"
+camel:
+  springboot:
+    main-run-controller: true
+
+#Server settings
+server:
+  port: 8080
+  servlet:
+    context-path: /api/v1
+
+#Application health check
+management:
+  endpoints:
+    web:
+      base-path: /manage
+      exposure:
+        include: "*"
+
+#DEV profile
+---
+#Database, Mail and JPA settings
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}?useTimezone=true&serverTimezone=UTC&useLegacyDatetimeCode=false
+    username: ${DB_USER}
+    password: ${DB_PASS}
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update # Hibernate ddl auto (create, create-drop, update)
+    show-sql: true
+    generate-ddl: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL57Dialect
+        jdbc:
+          time_zone: UTC
+
+
+#PROD profile
+---
+#Server settings
+server:
+  port: 8443
+#  ssl:
+#    enabled: true
+#    key-store-type: PKCS12
+#    key-store: classpath:applepolitical.pkcs12
+#    key-store-password: ${KEY_STORE_PASS}
+#    key-alias: applepolitical
+#    key-password: ${KEY_STORE_PASS}
+
+spring:
+  profiles: prod
+  datasource:
+    url: jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}?useTimezone=true&serverTimezone=UTC&useLegacyDatetimeCode=false
+    username: ${DB_USER}
+    password: ${DB_PASS}
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none # Hibernate ddl auto (create, create-drop, update)
+    show-sql: false
+    generate-ddl: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL57Dialect
+        jdbc:
+          time_zone: UTC
+
+app365:
+  domain: applepolitical.com
+  subdomain-regex: "([a-z0-9-]{6,63})(?=\\.applepolitical\\.com)"

@@ -1,0 +1,97 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "thumbnail": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "owner": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "firstName": {
+                "type": "string"
+              },
+              "lastName": {
+                "type": "string"
+              },
+              "fullName": {
+                "type": "string"
+              },
+              "nickname": {
+                "type": "string"
+              },
+              "profilePicture": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "fullName",
+              "profilePicture"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "createdAt",
+          "thumbnail",
+          "url",
+          "owner"
+        ]
+      }
+    },
+    "pagination": {
+      "type": "object",
+      "properties": {
+        "totalPages": {
+          "type": "integer"
+        },
+        "totalElements": {
+          "type": "integer"
+        },
+        "page": {
+          "type": "integer"
+        },
+        "pageSize": {
+          "type": "integer"
+        },
+        "numberOfElements": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "totalPages",
+        "totalElements",
+        "page",
+        "size",
+        "numberOfElements"
+      ]
+    }
+  },
+  "required": [
+    "data",
+    "pagination"
+  ]
+}

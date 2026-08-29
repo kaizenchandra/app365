@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "email": {
+      "type": "string",
+      "description": "The user email address."
+    },
+    "phoneCountryCode": {
+      "type": "string",
+      "description": "Phone country code."
+    },
+    "phone": {
+      "type": "string",
+      "description": "User personal cell phone number."
+    },
+    "password": {
+      "type": "string",
+      "description": "User password."
+    }
+  },
+  "required": [
+    "email",
+    "phone",
+    "password",
+    "phoneCountryCode"
+  ]
+}

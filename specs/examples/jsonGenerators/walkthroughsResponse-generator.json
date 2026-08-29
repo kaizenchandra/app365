@@ -1,0 +1,9 @@
+[
+  '{{repeat(3, 3)}}',
+  {
+    "id": '{{guid()}}',
+    "title": '{{lorem(random(3, 8), "words")}}',
+    "description": '{{lorem(1, "sentences")}}',
+    "image": 'http://placehold.it/400x300'
+  }
+]

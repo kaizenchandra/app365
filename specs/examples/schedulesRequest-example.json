@@ -1,0 +1,32 @@
+[
+  {
+    "taskId": "b4038e29-bcb7-49f2-ae5f-e9259628f023",
+    "note": "I'am here to help.",
+    "entries": [
+      {
+        "startTime": "2018-10-26T23:15:00-04:00",
+        "endTime": "2018-10-26T23:45:00-04:00",
+        "repeatDays": [0, 1],
+        "repeatUntil": "2018-11-10"
+      }
+    ]
+  },
+  {
+    "taskId": "18774f0f-b5fe-47cf-a390-525548da003e",
+    "note": "I'am here to help.",
+    "entries": [
+      {
+        "startTime": "2018-09-20T20:00:00+04:00",
+        "endTime": "2018-09-21T02:00:00+04:00",
+        "repeatDays": [4],
+        "repeatUntil": "2018-09-30"
+      },
+      {
+        "startTime": "2018-08-26T08:00:00+04:00",
+        "endTime": "2018-08-26T10:00:00+04:00",
+        "repeatDays": [0, 1, 2],
+        "repeatUntil": "2018-09-30"
+      }
+    ]
+  }
+]

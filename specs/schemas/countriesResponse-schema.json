@@ -1,0 +1,23 @@
+{
+  "type": "array",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "iso2": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "id",
+      "name"
+    ]
+  }
+}

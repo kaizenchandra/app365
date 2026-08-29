@@ -1,0 +1,68 @@
+{
+  "id": "d8a51ea5-56c0-4f83-90b0-b6c29012e047",
+  "firstName": "John",
+  "lastName": "Doe",
+  "fullName": "John Doe",
+  "nickname": "John",
+  "idCard": "123-4567890-2",
+  "email": "john.doe@gmail.com",
+  "phoneCountryCode": "1",
+  "phone": "+1 (954) 314-1234",
+  "profilePicture": "http://placehold.it/400x300",
+  "birthDate": "1986-07-15",
+  "age": 31,
+  "channel": "applepolitical",
+  "verified": true,
+  "timeZoneOffset": -25200,
+  "timeZone": "America/Santo_Domingo",
+  "createdAt": "2019-07-01T08:03:38+04:00",
+  "language": "en",
+  "meta": {
+    "socialTokens": [
+      {
+        "channel": "facebook"
+      }
+    ]
+  },
+  "awards": {
+    "points": 50,
+    "medals": [
+      {
+        "id": "",
+        "name": "",
+        "description": "",
+        "image": ""
+      }
+    ]
+  },
+  "address": {
+    "country": {
+      "id": "",
+      "iso2": "DO",
+      "name": "Dominican Republic"
+    },
+    "state": {
+      "id": "",
+      "name": "Santiago"
+    },
+    "municipality": {
+      "id": "",
+      "name": "Santiago de los Caballeros"
+    },
+    "city": {
+      "id": "",
+      "name": "Santiago"
+    },
+    "sector": {
+      "id": "",
+      "name": "Villa Olimpica"
+    },
+    "line": "Manzana AA, Apto 4A",
+    "street": "C/Profesor Jose Miralles",
+    "home": "B",
+    "apartment": "3",
+    "zipCode": "12345",
+    "reference": "",
+    "fullAddress": ""
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "data": [
+    '{{repeat(10, 10)}}',
+    {
+      "id": '{{guid()}}',
+      "title": '{{lorem(5, "words")}}',
+      "startDate": '{{date(new Date(2018, 0, 1), new Date(2020, 0, 1), "YYYY-MM-ddTHH:mm:ssZ")}}',
+      "createdAt": '{{date(new Date(2018, 0, 1), new Date(2020, 0, 1), "YYYY-MM-ddTHH:mm:ssZ")}}',
+      "coverPicture": 'https://placeimg.com/640/480/tech?t={{integer(1532124821,2524608000)}}',
+      "isFlagged": '{{bool()}}',
+      "meta": {
+        "user": {
+          "joined": '{{bool()}}'
+        }
+      }
+    }
+  ],
+  "pagination": {
+    "totalPages": 1,
+    "totalElements": 10,
+    "page": 0,
+    "size": 10,
+    "numberOfElements": 10
+  }
+}

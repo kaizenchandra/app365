@@ -1,0 +1,11 @@
+[
+  '{{repeat(101)}}',
+  {
+    "location_id": '{{guid()}}',
+    "event_id": '{{index()}}',
+    "address": '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}',
+    "latitude": '{{floating(-90.000001, 90)}}',
+    "longitude": '{{floating(-180.000001, 180)}}',
+    "created_at": '{{date(new Date(2018, 0, 1), new Date(2020, 0, 1), "YYYY-MM-ddTHH:mm:ss")}}'
+  }
+]

@@ -1,0 +1,151 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "fullName": {
+      "type": "string"
+    },
+    "profilePicture": {
+      "type": "string"
+    },
+    "party": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "nameAbbr": {
+          "type": "string"
+        },
+        "bannerPicture": {
+          "type": "string"
+        },
+        "slogan": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "donationCount": {
+          "type": "integer"
+        },
+        "offerCount": {
+          "type": "integer"
+        },
+        "shareCount": {
+          "type": "integer"
+        },
+        "commentCount": {
+          "type": "integer"
+        },
+        "likeCount": {
+          "type": "integer"
+        },
+        "postCount": {
+          "type": "integer"
+        },
+        "postCommentCount": {
+          "type": "integer"
+        }
+      }
+    },
+    "bio": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "lastComment": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "content": {
+              "type": "string"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "owner": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "firstName": {
+                  "type": "string"
+                },
+                "lastName": {
+                  "type": "string"
+                },
+                "fullName": {
+                  "type": "string"
+                },
+                "nickname": {
+                  "type": "string"
+                },
+                "profilePicture": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "required": [
+            "id",
+            "content",
+            "createdAt",
+            "owner"
+          ]
+        },
+        "user": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "liked": {
+              "type": "boolean"
+            },
+            "commented": {
+              "type": "boolean"
+            },
+            "shared": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "firstName",
+    "lastName",
+    "fullName"
+  ]
+}

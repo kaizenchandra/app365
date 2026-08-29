@@ -1,0 +1,229 @@
+{
+  "data": [
+    {
+      "id": "592ad9ba-3e06-471f-b117-a34fb28ec541",
+      "title": "ad et aliqua",
+      "content": "Voluptate deserunt mollit aliqua reprehenderit aute veniam id cupidatat eiusmod.",
+      "createdAt": "2019-02-03T18:19:33+04:00",
+      "type": "users.notifications.type.html",
+      "user": {
+        "id": "fa80b4a3-fcd9-4942-9b16-366f099e7485",
+        "profilePicture": "http://placehold.it/400x300"
+      },
+      "articles": [
+        {
+          "id": "a6b46078-1cb6-4211-8d88-3233fc95aa41",
+          "coverPicture": "http://placehold.it/400x300"
+        },
+        {
+          "id": "d773e120-73d9-4756-9bac-ce4bafa74ab4",
+          "coverPicture": "http://placehold.it/400x300"
+        },
+        {
+          "id": "5d5f6545-676e-42dd-903c-1ed1caeca7e2",
+          "coverPicture": "http://placehold.it/400x300"
+        }
+      ]
+    },
+    {
+      "id": "d352eb0b-18ba-43e1-89f7-74fbdcf82e60",
+      "title": "ipsum commodo laboris",
+      "content": "Enim esse eiusmod ipsum ad ad cupidatat.",
+      "createdAt": "2019-01-02T23:09:23+04:00",
+      "type": "users.notifications.type.regular",
+      "user": {
+        "id": "84c8e5d4-b854-4f7e-945b-8c90c342281c",
+        "profilePicture": "http://placehold.it/400x300"
+      },
+      "articles": [
+        {
+          "id": "ee7152b7-0634-44a6-bf54-1cc51f376941",
+          "coverPicture": "http://placehold.it/400x300"
+        },
+        {
+          "id": "047d4623-003a-4642-b46a-a75bec1130ab",
+          "coverPicture": "http://placehold.it/400x300"
+        }
+      ]
+    },
+    {
+      "id": "274c709b-6fe3-46f2-b44f-e848a84ea69e",
+      "title": "eu adipisicing elit",
+      "content": "Reprehenderit et anim aute adipisicing id aliqua ut non incididunt aliquip ea.",
+      "createdAt": "2019-08-23T23:04:24+04:00",
+      "type": "users.notifications.type.new-published-articles",
+      "user": {
+        "id": "45c06ae3-0e0b-4c0b-958d-c803c7c65353",
+        "profilePicture": "http://placehold.it/400x300"
+      },
+      "articles": [
+        {
+          "id": "5d3fdd09-393e-4e4d-9e0a-eac293d57296",
+          "coverPicture": "http://placehold.it/400x300"
+        },
+        {
+          "id": "de95cd7a-467b-46d1-a4d2-a7eda81b621d",
+          "coverPicture": "http://placehold.it/400x300"
+        },
+        {
+          "id": "e3948dbd-7a92-4761-a4fc-4d734e5a53e2",
+          "coverPicture": "http://placehold.it/400x300"
+        }
+      ]
+    },
+    {
+      "id": "d532b8ac-4f55-4cb3-9a72-957e10bf250b",
+      "title": "cupidatat anim sit",
+      "content": "Mollit velit fugiat proident eiusmod exercitation aliqua nisi commodo sunt.",
+      "createdAt": "2019-12-09T04:29:47+04:00",
+      "type": "users.notifications.type.regular",
+      "user": {
+        "id": "24664abb-0bf4-489c-b42a-9fc35cd87549",
+        "profilePicture": "http://placehold.it/400x300"
+      },
+      "articles": [
+        {
+          "id": "eb9f0938-8047-404d-a6b7-f64f3ab6206d",
+          "coverPicture": "http://placehold.it/400x300"
+        },
+        {
+          "id": "cae5fb3e-326b-4ecc-894a-7cfaf8571970",
+          "coverPicture": "http://placehold.it/400x300"
+        },
+        {
+          "id": "6cf0e77c-c769-4295-8175-8b5a62378600",
+          "coverPicture": "http://placehold.it/400x300"
+        }
+      ]
+    },
+    {
+      "id": "430b6cea-8339-469b-8988-4453037e25a2",
+      "title": "velit enim non",
+      "content": "Veniam quis consectetur anim duis veniam laborum.",
+      "createdAt": "2019-01-21T04:46:00+04:00",
+      "type": "users.notifications.type.regular",
+      "user": {
+        "id": "e6bd830b-8748-49ac-b1b5-9b74cd95a47a",
+        "profilePicture": "http://placehold.it/400x300"
+      },
+      "articles": [
+        {
+          "id": "0b9a8924-cd0a-416d-8267-eb8d599a444b",
+          "coverPicture": "http://placehold.it/400x300"
+        },
+        {
+          "id": "9e9bea17-c7a0-4a17-85bc-799166131e83",
+          "coverPicture": "http://placehold.it/400x300"
+        }
+      ]
+    },
+    {
+      "id": "5172e411-26b6-40c6-811a-80a040b479e0",
+      "title": "sit aliqua occaecat",
+      "content": "Ea ullamco sit magna voluptate laborum magna cillum nulla dolore velit aliqua.",
+      "createdAt": "2018-03-23T19:55:15+04:00",
+      "type": "users.notifications.type.regular",
+      "user": {
+        "id": "50a23d30-f967-404e-846a-ba3c98924624",
+        "profilePicture": "http://placehold.it/400x300"
+      },
+      "articles": [
+        {
+          "id": "31f2dd8d-5822-4598-a466-20224efef477",
+          "coverPicture": "http://placehold.it/400x300"
+        }
+      ]
+    },
+    {
+      "id": "29f9b29d-f236-4415-a281-8e0285018f93",
+      "title": "consequat officia tempor",
+      "content": "Esse cupidatat dolor aliquip ad velit proident aliqua non.",
+      "createdAt": "2019-01-11T03:35:28+04:00",
+      "type": "users.notifications.type.new-published-articles",
+      "user": {
+        "id": "55b48928-bf82-4c9c-b9b2-4f706e581d12",
+        "profilePicture": "http://placehold.it/400x300"
+      },
+      "articles": [
+        {
+          "id": "76de54d0-ccfb-40d9-af7d-ed1f987b3d19",
+          "coverPicture": "http://placehold.it/400x300"
+        },
+        {
+          "id": "b0674daa-d0bb-4cf9-abe6-0e438d1cf36e",
+          "coverPicture": "http://placehold.it/400x300"
+        },
+        {
+          "id": "bdf570a9-4507-4de1-a92a-f59348f0d5c1",
+          "coverPicture": "http://placehold.it/400x300"
+        }
+      ]
+    },
+    {
+      "id": "d16280eb-7799-4a06-85c3-9312ddfac3ae",
+      "title": "fugiat minim aliqua",
+      "content": "Est laborum voluptate cillum eiusmod tempor deserunt non tempor sit est laborum cupidatat.",
+      "createdAt": "2018-02-28T10:25:38+04:00",
+      "type": "users.notifications.type.joined",
+      "user": {
+        "id": "4ead4b61-b45a-4c53-adb8-bdea0e76359c",
+        "profilePicture": "http://placehold.it/400x300"
+      },
+      "articles": [
+        {
+          "id": "f6154be2-0b8d-47f1-8a93-5eecea1e144b",
+          "coverPicture": "http://placehold.it/400x300"
+        }
+      ]
+    },
+    {
+      "id": "fdd7613f-312d-44ce-9ad4-ccb5da8c7c64",
+      "title": "consequat cillum nostrud",
+      "content": "Lorem exercitation excepteur consequat minim.",
+      "createdAt": "2019-08-09T05:37:28+04:00",
+      "type": "users.notifications.type.joined",
+      "user": {
+        "id": "781b367c-0432-49c7-89b8-88a506f76bf9",
+        "profilePicture": "http://placehold.it/400x300"
+      },
+      "articles": [
+        {
+          "id": "0ca02297-64b7-486d-8b82-2c50611cb4cd",
+          "coverPicture": "http://placehold.it/400x300"
+        }
+      ]
+    },
+    {
+      "id": "c2545303-5b28-4b58-b747-ae8f623e657a",
+      "title": "tempor incididunt aliquip",
+      "content": "Id anim duis Lorem excepteur ipsum non adipisicing ipsum ut sit qui elit ad aute.",
+      "createdAt": "2018-12-17T12:23:25+04:00",
+      "type": "users.notifications.type.joined",
+      "user": {
+        "id": "6972a169-fec8-44d0-ae8d-89b1e6e7076d",
+        "profilePicture": "http://placehold.it/400x300"
+      },
+      "articles": [
+        {
+          "id": "f737dd06-4fb6-4d60-b6fb-28e70b189682",
+          "coverPicture": "http://placehold.it/400x300"
+        },
+        {
+          "id": "c7ca268c-7cb0-41f5-9ae0-ea157f6ad829",
+          "coverPicture": "http://placehold.it/400x300"
+        },
+        {
+          "id": "18058e4c-6fff-493d-bfad-9edc0577fe4d",
+          "coverPicture": "http://placehold.it/400x300"
+        }
+      ]
+    }
+  ],
+  "pagination": {
+    "totalPages": 1,
+    "totalElements": 10,
+    "page": 0,
+    "size": 10,
+    "numberOfElements": 10
+  }
+}

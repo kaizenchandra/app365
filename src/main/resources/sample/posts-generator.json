@@ -1,0 +1,10 @@
+[
+  '{{repeat(2)}}',
+  {
+    "post_id": '{{guid()}}',
+    "candidate_id": 1,
+    "content": '{{lorem(1, "sentences ")}}',
+    "channel": '{{random("FACEBOOK", "TWITTER")}}',
+    "created_at": '{{date(new Date(2018, 0, 1), new Date(2020, 0, 1), "YYYY-MM-ddTHH:mm:ss")}}'
+  }
+]

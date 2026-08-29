@@ -1,0 +1,31 @@
+{
+  "data": [
+    '{{repeat(10, 10)}}',
+    {
+      "id": '{{guid()}}',
+      "content": '{{lorem(1, "sentences")}}',
+      "channel": '{{random("facebook", "twitter")}}',
+      "createdAt": '{{date(new Date(2018, 0, 1), new Date(2020, 0, 1), "YYYY-MM-ddTHH:mm:ssZ")}}',
+      "reportedAt": '{{date(new Date(2018, 0, 1), new Date(2020, 0, 1), "YYYY-MM-ddTHH:mm:ssZ")}}',
+      "owner": {
+        "id": '{{guid()}}',
+        "firstName": '{{firstName()}}',
+        "lastName": '{{surname()}}',
+        "fullName": function (tags) {
+          return this.firstName + ' ' + this.lastName;
+        },
+        "nickname": function (tags) {
+          return this.firstName;
+        },
+        "profilePicture": 'http://placehold.it/400x300'
+      }
+    }
+  ],
+  "pagination": {
+    "totalPages": 1,
+    "totalElements": 10,
+    "page": 0,
+    "size": 10,
+    "numberOfElements": 10
+  }
+}

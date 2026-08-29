@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "appId",
+    "service",
+    "appSecret"
+  ],
+  "properties": {
+    "appId": {
+      "type": "string"
+    },
+    "service": {
+      "type": "string"
+    },
+    "appSecret": {
+      "type": "string"
+    }
+  }
+}

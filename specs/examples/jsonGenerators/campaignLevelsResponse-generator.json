@@ -1,0 +1,7 @@
+[
+  '{{repeat(3, 3)}}',
+  {
+    "level": '{{integer(1, 10)}}',
+    "memberCount": '{{integer(1, 100)}}'
+  }
+]

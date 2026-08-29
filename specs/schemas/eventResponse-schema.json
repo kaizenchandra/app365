@@ -1,0 +1,190 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "coverPicture": {
+      "type": "string"
+    },
+    "isFlagged": {
+      "type": "boolean"
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string"
+        },
+        "geo": {
+          "type": "object",
+          "properties": {
+            "lat": {
+              "type": "number"
+            },
+            "lon": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "lat",
+            "lon"
+          ]
+        }
+      },
+      "required": [
+        "address",
+        "geo"
+      ]
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "joinCount": {
+          "type": "integer"
+        },
+        "shareCount": {
+          "type": "integer"
+        },
+        "commentCount": {
+          "type": "integer"
+        },
+        "likeCount": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "joinCount",
+        "shareCount",
+        "commentCount",
+        "likeCount"
+      ]
+    },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "lastComment": {
+          "type": "object",
+          "properties": {
+            "content": {
+              "type": "string"
+            },
+            "createdAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "owner": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "fullName": {
+                  "type": "string"
+                },
+                "profilePicture": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "fullName",
+                "profilePicture"
+              ]
+            }
+          },
+          "required": [
+            "content",
+            "createdAt",
+            "owner"
+          ]
+        },
+        "user": {
+          "type": "object",
+          "properties": {
+            "liked": {
+              "type": "boolean"
+            },
+            "commented": {
+              "type": "boolean"
+            },
+            "shared": {
+              "type": "boolean"
+            },
+            "joined": {
+              "type": "boolean"
+            },
+            "calendars": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "platform": {
+                    "type": "string"
+                  },
+                  "calendarId": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "platform",
+                  "calendarId"
+                ]
+              }
+            }
+          },
+          "required": [
+            "liked",
+            "commented",
+            "shared",
+            "joined",
+            "calendars"
+          ]
+        }
+      },
+      "required": [
+        "lastComment",
+        "user"
+      ]
+    },
+    "cursor": {
+      "type": "object",
+      "properties": {
+        "next": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "next"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "title",
+    "content",
+    "startDate",
+    "createdAt",
+    "coverPicture",
+    "isFlagged",
+    "location",
+    "summary",
+    "meta",
+    "cursor"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "candidate_id": '{{guid()}}',
+  "first_name": '{{firstName()}}',
+  "last_name": '{{surname()}}',
+  "id_card": '{{integer(120, 123)}}-{{integer(1000000, 9999999)}}-{{integer(1, 9)}}',
+  "email": '{{email()}}',
+  "phone": '{{phone()}}',
+  "birth_date": '{{date(new Date(1970, 0, 1), new Date(2000, 0, 1), "YYYY-MM-dd")}}',
+  "biography_description": '{{lorem(2, "paragraphs")}}',
+  "profile_picture": 'https://placeimg.com/640/480/tech?t={{integer(1532124821,2524608000)}}',
+  "candidate_for": '{{random("President", "Senator")}}',
+  "created_at": '{{date(new Date(2018, 0, 1), new Date(2020, 0, 1), "YYYY-MM-ddTHH:mm:ss")}}',
+  "active": '{{integer(0,1)}}'
+}

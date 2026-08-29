@@ -1,0 +1,18 @@
+{
+  "data": [
+    '{{repeat(3, 5)}}',
+    {
+      "id": '{{guid()}}',
+      "title": '{{lorem(3, "words")}}',
+      "content": '{{lorem(1, "sentences")}}',
+      "createdAt": '{{date(new Date(2018, 0, 1), new Date(2020, 0, 1), "YYYY-MM-ddTHH:mm:ssZ")}}',
+    }
+  ],
+  "pagination": {
+    "totalPages": 1,
+    "totalElements": 10,
+    "page": 0,
+    "size": 10,
+    "numberOfElements": 10
+  }
+}

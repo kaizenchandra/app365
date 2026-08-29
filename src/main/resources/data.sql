@@ -1,0 +1,2 @@
+INSERT INTO users (user_id, first_name, last_name, email) VALUES (UUID(), 'John', 'Doe', 'john.doe@domain.com');
+INSERT INTO users (user_id, first_name, last_name, email) VALUES (UUID(), 'Myrna', 'Hahn', 'myrna.hahn@domain.com');

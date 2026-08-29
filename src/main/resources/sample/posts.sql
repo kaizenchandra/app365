@@ -1,0 +1,2 @@
+INSERT INTO posts(post_id,candidate_id,content,channel,created_at) VALUES ('1ac2f8c9-b0ed-4c8d-917d-abce30f23b6b',1,'Eiusmod deserunt cillum eu duis cupidatat esse cillum.','FACEBOOK','2019-09-26T21:02:15');
+INSERT INTO posts(post_id,candidate_id,content,channel,created_at) VALUES ('459b6b3d-52ad-4147-a99f-545c11ff30f3',1,'Nulla exercitation mollit sint minim.','FACEBOOK','2019-05-24T19:56:37');

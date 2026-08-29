@@ -1,0 +1,93 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "coverPicture": {
+            "type": "string"
+          },
+          "isFlagged": {
+            "type": "boolean"
+          },
+          "meta": {
+            "type": "object",
+            "properties": {
+              "user": {
+                "type": "object",
+                "properties": {
+                  "joined": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "joined"
+                ]
+              }
+            },
+            "required": [
+              "user"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "startDate",
+          "createdAt",
+          "coverPicture",
+          "isFlagged",
+          "meta"
+        ]
+      }
+    },
+    "pagination": {
+      "type": "object",
+      "properties": {
+        "totalPages": {
+          "type": "integer"
+        },
+        "totalElements": {
+          "type": "integer"
+        },
+        "page": {
+          "type": "integer"
+        },
+        "pageSize": {
+          "type": "integer"
+        },
+        "numberOfElements": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "totalPages",
+        "totalElements",
+        "page",
+        "size",
+        "numberOfElements"
+      ]
+    }
+  },
+  "required": [
+    "data",
+    "pagination"
+  ]
+}

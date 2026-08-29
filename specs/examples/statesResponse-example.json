@@ -1,0 +1,42 @@
+[
+  {
+    "id": "f2187596-2e11-4b88-9a76-cea73f74b7ca",
+    "name": "Maryland"
+  },
+  {
+    "id": "48cefd08-ae75-4675-8da0-3b5a9a1c8b94",
+    "name": "Vermont"
+  },
+  {
+    "id": "08a268a3-8a54-4b07-aabe-24c96b85303d",
+    "name": "Kansas"
+  },
+  {
+    "id": "287198a9-aadd-44bd-afac-2979c173c951",
+    "name": "Tennessee"
+  },
+  {
+    "id": "1310ff4d-ae84-479d-b4cf-1d325fb43eed",
+    "name": "South Carolina"
+  },
+  {
+    "id": "9266c64c-d741-4a91-945a-d8e9ca0967e7",
+    "name": "Oregon"
+  },
+  {
+    "id": "c9221295-97dc-40f4-a293-eb55f6fa6e22",
+    "name": "Texas"
+  },
+  {
+    "id": "fefede67-a5db-4336-8a5f-62a4161374ab",
+    "name": "Puerto Rico"
+  },
+  {
+    "id": "213142d3-e690-480f-8ace-af0f34189103",
+    "name": "New Jersey"
+  },
+  {
+    "id": "664fa2d8-0572-43e1-bb3e-2a8d34a18a51",
+    "name": "Delaware"
+  }
+]

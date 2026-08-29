@@ -1,0 +1,34 @@
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "nickname": "John",
+  "idCard": "123-4567890-2",
+  "email": "john.doe@gmail.com",
+  "phone": "+1 (954) 314-1234",
+  "address": {
+    "country": {
+      "id": ""
+    },
+    "state": {
+      "id": "",
+      "name": ""
+    },
+    "municipality": {
+      "id": "",
+      "name": ""
+    },
+    "city": {
+      "id": "",
+      "name": ""
+    },
+    "sector": {
+      "id": "",
+      "name": ""
+    },
+    "street": "Manzana AA",
+    "home": "4",
+    "apartment": "B",
+    "zipCode": "12345",
+    "reference": ""
+  }
+}

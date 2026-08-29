@@ -1,0 +1,17 @@
+{
+  "status": 207,
+  "code": 40005,
+  "requestId": "af92dc88-6a7e-445f-82d7-4d80ce4de171",
+  "message": "Unable to send verification token",
+  "timestamp": "2019-02-05T15:54:58+04:00",
+  "type": "error",
+  "data": {
+    "id": "d6a6396d-f0ab-4af9-a71f-80420ecb15cc"
+  },
+  "errors": [
+    {
+      "field": "fieldName",
+      "message": "Invalid value for fieldName"
+    }
+  ]
+}

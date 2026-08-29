@@ -1,0 +1,16 @@
+queryParameters:
+  page:
+    description: This offsets the start of each page by the number specified.
+    type: integer
+    required: false
+    default: 0
+    minimum: 0
+    example: 0
+  size:
+    description: This is the number of individual objects that are returned in each page. A limit of 0 will return no results.
+    type: integer
+    required: false
+    default: 10
+    minimum: 1
+    maximum: 20
+    example: 15

@@ -1,0 +1,1 @@
+INSERT INTO party(party_id,candidate_id,name,name_abbr,slogan,banner_picture,created_at) VALUES ('5f539884-006e-4556-acac-3fd66f5aef3a',1,'mollit ea eiusmod','MEE','elit eiusmod ad exercitation','https://placeimg.com/640/480/tech?t=2092457255','2019-07-03T04:00:51');

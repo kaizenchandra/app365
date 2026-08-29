@@ -1,0 +1,29 @@
+[
+  {
+    "id": "15751db8-10ae-45bc-bd7b-1369a10ec03e",
+    "taskId": "8d3a82ec-b714-4035-9fe8-641bee498265",
+    "note": "I'am here to help.",
+    "startTime": "2018-10-26T23:15:00-04:00",
+    "endTime": "2018-10-26T23:45:00-04:00",
+    "repeatDays": [0, 1],
+    "repeatUntil": "2018-11-10"
+  },
+  {
+    "id": "b64e5081-eae5-4b2d-bc63-ade413e13c5e",
+    "taskId": "8d3a82ec-b714-4035-9fe8-641bee498265",
+    "note": "I'am here to help.",
+    "startTime": "2018-09-20T20:00:00+04:00",
+    "endTime": "2018-09-21T02:00:00+04:00",
+    "repeatDays": [4],
+    "repeatUntil": "2018-09-30"
+  },
+  {
+    "id": "fda8f635-2fcd-4c10-bacb-6b006e6777d8",
+    "taskId": "8d3a82ec-b714-4035-9fe8-641bee498265",
+    "note": "I'am here to help.",
+    "startTime": "2018-08-26T08:00:00+04:00",
+    "endTime": "2018-08-26T10:00:00+04:00",
+    "repeatDays": [0, 1, 2],
+    "repeatUntil": "2018-09-30"
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "idCard": '{{integer(120, 123)}}-{{integer(1000000, 9999999)}}-{{integer(1, 9)}}',
+  "firstName": '{{firstName()}}',
+  "lastName": '{{surname()}}',
+  "fullName": function(tags){
+    return this.firstName + ' ' + this.lastName;
+  },
+  "profilePicture": 'http://placehold.it/400x300',
+  "address": {
+    "country": '{{country()}}',
+    "state": '{{state()}}',
+    "municipality": '{{state()}}',
+    "city": '{{city()}}',
+    "sector": '{{city()}}',
+    "line1": '{{city()}}',
+    "line2": '{{street()}}',
+    "zipCode": '{{integer(100, 999)}}',
+    "reference": '{{street()}}',
+    "fullAddress": '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}'
+  }
+}

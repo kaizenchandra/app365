@@ -1,0 +1,8 @@
+[
+  '{{repeat(10, 10)}}',
+  {
+    "id": '{{guid()}}',
+    "iso2": '{{country(true)}}',
+    "name": '{{country()}}'
+  }
+]

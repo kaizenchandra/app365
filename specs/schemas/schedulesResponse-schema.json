@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "taskId",
+      "startTime",
+      "endTime"
+    ],
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "taskId": {
+        "type": "string"
+      },
+      "note": {
+        "type": "string"
+      },
+      "startTime": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "endTime": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "repeatDays": {
+        "type": "array",
+        "items": {
+          "type": "integer"
+        }
+      },
+      "repeatUntil": {
+        "type": "string",
+        "format": "date"
+      }
+    }
+  }
+}

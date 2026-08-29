@@ -1,0 +1,13 @@
+{
+  "id": '{{guid()}}',
+  "code": '{{integer(1, 500)}}',
+  "name": '{{city()}}',
+  "picture": 'https://placeimg.com/640/480/tech?t={{integer(1532124821,2524608000)}}',
+  "location": {
+    "address": '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}',
+    "geo": {
+      "lat": '{{floating(-90.000001, 90)}}',
+      "lon": '{{floating(-180.000001, 180)}}'
+    }
+  }
+}

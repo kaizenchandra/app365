@@ -1,0 +1,14 @@
+[
+  {
+    "id": "af96369f-80ba-4e68-affe-6a044066ef84",
+    "platform": "android",
+    "firebaseToken": "9a952d45-ddf5-4389-a67b-75785fb9aaed",
+    "createdAt": "2018-02-20T03:46:30+04:00"
+  },
+  {
+    "id": "3c3695c7-fdc3-4bf9-8e21-07e667ec5923",
+    "platform": "ios",
+    "firebaseToken": "91a9329e-86f0-44c1-bfdb-56883c482b45",
+    "createdAt": "2019-11-10T15:34:23+04:00"
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "party_id": '{{guid()}}',
+  "candidate_id": 1,
+  "name": '{{lorem(3, "words")}}',
+  "name_abbr": function(tags){
+    var parts = this.name.split(' ');
+    return parts[0].charAt(0).toUpperCase() + parts[1].charAt(0).toUpperCase()+parts[2].charAt(0).toUpperCase();
+  },
+  "slogan": '{{lorem(4, "words")}}',
+  "banner_picture": 'https://placeimg.com/640/480/tech?t={{integer(1532124821,2524608000)}}',
+  "created_at": '{{date(new Date(2018, 0, 1), new Date(2020, 0, 1), "YYYY-MM-ddTHH:mm:ss")}}'
+}

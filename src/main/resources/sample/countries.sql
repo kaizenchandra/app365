@@ -1,0 +1,1 @@
+INSERT INTO countries(id,country_id,iso2,name) VALUES (1,'9a74ec40-a226-11e8-b93c-0242ac110002','DO','DOMINICAN REPUBLIC');

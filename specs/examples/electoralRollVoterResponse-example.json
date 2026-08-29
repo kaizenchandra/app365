@@ -1,0 +1,19 @@
+{
+  "idCard": "123-2985101-8",
+  "firstName": "Greer",
+  "lastName": "Bernard",
+  "fullName": "Greer Bernard",
+  "profilePicture": "http://placehold.it/400x300",
+  "address": {
+    "country": "Gambia",
+    "state": "Connecticut",
+    "municipality": "Nebraska",
+    "city": "Boyd",
+    "sector": "Greensburg",
+    "line1": "Drummond",
+    "line2": "Opal Court",
+    "zipCode": "609",
+    "reference": "Crown Street",
+    "fullAddress": "502 Gilmore Court, Tampico, Arkansas, 1630"
+  }
+}

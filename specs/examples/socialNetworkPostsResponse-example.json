@@ -1,0 +1,35 @@
+{
+  "data": [
+    {
+      "id": "d7303896-4241-47ad-9fa1-4d164a747cd3",
+      "title": "quis amet minim",
+      "content": "Dolore do culpa officia voluptate incididunt pariatur.",
+      "createdAt": "2019-07-23T17:15:02+04:00"
+    },
+    {
+      "id": "dcb81041-d894-4c6b-9979-e01f07ba8e17",
+      "title": "ipsum aute cillum",
+      "content": "Dolor qui aute ex velit sunt.",
+      "createdAt": "2019-01-29T14:51:11+04:00"
+    },
+    {
+      "id": "5c2117bd-8944-473a-be37-3ed6cee6197f",
+      "title": "mollit duis exercitation",
+      "content": "Anim sit nostrud enim non.",
+      "createdAt": "2019-09-07T03:52:39+04:00"
+    },
+    {
+      "id": "27c1de8a-b26f-447d-9f38-b01ced1c2998",
+      "title": "reprehenderit aliquip cupidatat",
+      "content": "Aliqua ut proident magna laborum non enim laborum voluptate qui cupidatat.",
+      "createdAt": "2018-01-26T09:00:27+04:00"
+    }
+  ],
+  "pagination": {
+    "totalPages": 1,
+    "totalElements": 10,
+    "page": 0,
+    "size": 10,
+    "numberOfElements": 10
+  }
+}

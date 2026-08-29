@@ -1,0 +1,11 @@
+[
+  '{{repeat(20)}}',
+  {
+    "citizen_id": '{{guid()}}',
+    "id_card": '{{integer(120, 123)}}-{{integer(1000000, 9999999)}}-{{integer(1, 9)}}',
+    "first_name": '{{firstName()}}',
+    "last_name": '{{surname()}}',
+    "address": '{{email()}}',
+    "created_at": '{{date(new Date(2018, 0, 1), new Date(2020, 0, 1), "YYYY-MM-ddTHH:mm:ss")}}'
+  }
+]

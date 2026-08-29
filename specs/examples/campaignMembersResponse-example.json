@@ -1,0 +1,56 @@
+{
+  "data": [
+    {
+      "id": "9dc3b3aa-5d0a-4d08-bc9b-9e79817b2b51",
+      "idCard": "120-8586378-3",
+      "firstName": "Beatriz",
+      "lastName": "Dorsey",
+      "fullName": "Beatriz Dorsey",
+      "profilePicture": "http://placehold.it/400x300",
+      "birthDate": "1971-03-05",
+      "age": 47,
+      "memberSince": "2018-05-24T16:00:13+04:00",
+      "address": {
+        "country": {
+          "id": "",
+          "iso2": "DO",
+          "name": "Dominican Republic"
+        },
+        "state": {
+          "id": "",
+          "name": "Santiago"
+        },
+        "municipality": {
+          "id": "",
+          "name": "Santiago de los Caballeros"
+        },
+        "city": {
+          "id": "",
+          "name": "Santiago"
+        },
+        "sector": {
+          "id": "",
+          "name": "Villa Olimpica"
+        },
+        "line": "Manzana AA, Apto 4A",
+        "street": "C/Profesor Jose Miralles",
+        "home": "B",
+        "apartment": "3",
+        "zipCode": "12345",
+        "reference": "",
+        "fullAddress": ""
+      },
+      "team": {
+        "levelCount": 9,
+        "memberCount": 64
+      }
+    }
+  ],
+  "pagination": {
+    "totalPages": 1,
+    "totalElements": 1,
+    "page": 0,
+    "size": 10,
+    "numberOfElements": 1
+  }
+}

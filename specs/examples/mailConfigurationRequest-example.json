@@ -1,0 +1,10 @@
+{
+  "host": "smtp.gmail.com",
+  "port": 587,
+  "username": "john.doe@gmail.com",
+  "password": "hello123",
+  "protocol": "smtp",
+  "authenticationRequired": true,
+  "tlsEnable": true,
+  "tlsRequired": true
+}

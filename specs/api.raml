@@ -1,0 +1,1270 @@
+#%RAML 1.0
+---
+title: app365 API
+version: v1
+baseUri: https://{apiMode}.applepolitical.com/{version}
+baseUriParameters:
+  apiMode:
+    description: The environment in which the API is able to run.
+    enum: [ dev, qa, api ]
+    default: dev
+mediaType: application/json
+protocols: [ HTTP, HTTPS ]
+
+securitySchemes:
+  oauth_2_0: !include securitySchemes/oauth_2_0.raml
+
+schemas:
+  id: !include schemas/id-schema.json
+  idCardRequest: !include schemas/idCard-schema.json
+  login: !include schemas/login-schema.json
+  socialToken: !include schemas/socialToken-schema.json
+  error: !include schemas/error-schema.json
+  slidesResponse: !include schemas/slides-schema.json
+  accessToken: !include schemas/accessToken-schema.json
+  billingTokenRequest: !include schemas/billingTokenRequest-schema.json
+  donateRequest: !include schemas/donateRequest-schema.json
+  userRequest: !include schemas/userRequest-schema.json
+  userPatchRequest: !include schemas/userPatchRequest-schema.json
+  verifyPhoneVerificationCodeRequest: !include schemas/verifyPhoneVerificationCodeRequest-schema.json
+  passwordRequest: !include schemas/passwordRequest-schema.json
+  resetPasswordRequest: !include schemas/resetPasswordRequest-schema.json
+  changePasswordRequest: !include schemas/changePasswordRequest-schema.json
+  userResponse: !include schemas/userResponse-schema.json
+  accountRequest: !include schemas/accountRequest-schema.json
+  accountResponse: !include schemas/accountResponse-schema.json
+  accountsResponse: !include schemas/accountsResponse-schema.json
+  crmConfigurationRequest: !include schemas/crmConfigurationRequest-schema.json
+  apiTokenConfigurationRequest: !include schemas/apiTokenConfigurationRequest-schema.json
+  databaseConfigurationRequest: !include schemas/databaseConfigurationRequest-schema.json
+  mailConfigurationRequest: !include schemas/mailConfigurationRequest-schema.json
+  socialTokenConfigurationRequest: !include schemas/socialTokenConfigurationRequest-schema.json
+  notificationsResponse: !include schemas/notificationsResponse-schema.json
+  newsResponse: !include schemas/newsResponse-schema.json
+  newsesResponse: !include schemas/newsesResponse-schema.json
+  commentRequest: !include schemas/commentRequest-schema.json
+  commentsResponse: !include schemas/commentsResponse-schema.json
+  postsResponse: !include schemas/postsResponse-schema.json
+  eventResponse: !include schemas/eventResponse-schema.json
+  eventsResponse: !include schemas/eventsResponse-schema.json
+  videoResponse: !include schemas/videoResponse-schema.json
+  videosResponse: !include schemas/videosResponse-schema.json
+  deviceRequest: !include schemas/deviceRequest-schema.json
+  deviceResponse: !include schemas/deviceResponse-schema.json
+  devicesResponse: !include schemas/devicesResponse-schema.json
+  firebaseTokenRequest: !include schemas/firebaseToken-schema.json
+  settingsResponse: !include schemas/settingsResponse-schema.json
+  candidateInfoResponse: !include schemas/candidateInfoResponse-schema.json
+  socialNetworkPostsResponse: !include schemas/socialNetworkPostsResponse-schema.json
+  socialNetworkTokenRequest: !include schemas/socialNetworkToken-schema.json
+  socialNetworkTokensResponse: !include schemas/socialNetworkTokensResponse-schema.json
+  schedulesRequest: !include schemas/schedulesRequest-schema.json
+  schedulesResponse: !include schemas/schedulesResponse-schema.json
+  electoralRollVoterResponse: !include schemas/electoralRollVoterResponse-schema.json
+  campaignMembersResponse: !include schemas/campaignMembersResponse-schema.json
+  teamMemberAddressPatchRequest: !include schemas/teamMemberAddressPatchRequest-schema.json
+  campaignLevelsResponse: !include schemas/campaignLevelsResponse-schema.json
+  electoralCollegeResponse: !include schemas/electoralCollegeResponse-schema.json
+  medalResponse: !include schemas/medalResponse-schema.json
+  medalsResponse: !include schemas/medalsResponse-schema.json
+  calendarEntryRequest: !include schemas/calendarEntryRequest-schema.json
+  campaignTasksResponse: !include schemas/campaignTasksResponse-schema.json
+  countriesResponse: !include schemas/countriesResponse-schema.json
+  statesResponse: !include schemas/statesResponse-schema.json
+  municipalitiesResponse: !include schemas/municipalitiesResponse-schema.json
+  citiesResponse: !include schemas/citiesResponse-schema.json
+  sectorsResponse: !include schemas/sectorsResponse-schema.json
+  resendPhoneVerificationCodeRequest: !include schemas/resendPhoneVerificationCodeRequest-schema.json
+
+resourceTypes:
+  base: !include resourceTypes/base.raml
+
+traits:
+  offsetPageable: !include traits/offsetPageable.raml
+  cursorPageable: !include traits/cursorPageable.raml
+  sortable: !include traits/sortable.raml
+  searchable: !include traits/searchable.raml
+  traceable: !include traits/traceable.raml
+
+securedBy: [ oauth_2_0 ]
+
+/countries:
+  type: base
+  get:
+    description: |
+      Get a list of all the countries in the system.
+    responses:
+      200:
+        body:
+          schema: countriesResponse
+          example: !include examples/countriesResponse-example.json
+
+  /{id}/states:
+    type: base
+    uriParameters:
+      id:
+        description: Country id
+        type: string
+        required: true
+    get:
+      description: Get all states for a country.
+      responses:
+        200:
+          body:
+            schema: statesResponse
+            example: !include examples/statesResponse-example.json
+
+  /states/{id}/municipalities:
+    type: base
+    uriParameters:
+      id:
+        description: State id
+        type: string
+        required: true
+    get:
+      description: Get all municipalities for a state.
+      responses:
+        200:
+          body:
+            schema: municipalitiesResponse
+            example: !include examples/municipalitiesResponse-example.json
+
+  /states/municipalities/{id}/cities:
+    type: base
+    uriParameters:
+      id:
+        description: Municipality id
+        type: string
+        required: true
+    get:
+      description: Get all cities for a municipality.
+      responses:
+        200:
+          body:
+            schema: citiesResponse
+            example: !include examples/citiesResponse-example.json
+
+  /states/municipalities/cities/{id}/sectors:
+    type: base
+    uriParameters:
+      id:
+        description: City id
+        type: string
+        required: true
+    get:
+      description: Get all sectors for a municipality.
+      responses:
+        200:
+          body:
+            schema: sectorsResponse
+            example: !include examples/sectorsResponse-example.json
+
+/slides:
+  type: base
+  get:
+    description: |
+      Get a list of all the slides images, title and description for the
+      applications intro pages.
+    responses:
+      200:
+        body:
+          application/json:
+            schema: slidesResponse
+            example: !include examples/slidesResponse-example.json
+
+/auth:
+  /login:
+    type: base
+    post:
+      description: |
+        Log a registered user into the system with a valid email
+        and password. To be able to fulfill with the request the account should
+        be activated first and not blocked for any reasons.
+      body:
+        application/json:
+          schema: login
+          example: !include examples/loginRequest-example.json
+      responses:
+        200:
+          body:
+            application/json:
+              schema: accessToken
+              example: !include examples/accessTokenResponse-example.json
+  /logout:
+    type: base
+    get:
+      queryParameters:
+        deviceId:
+          description: The user device id.
+          type: string
+      description: Log out a user from the system.
+      responses:
+        200:
+
+  /password:
+    /reset:
+      type: base
+      post:
+        description: Allow a user to reset his password when forgotten.
+        body:
+          schema: resetPasswordRequest
+          example: !include examples/resetPasswordWithEmailRequest-example.json
+        responses:
+          204:
+      put:
+        headers:
+          X-Email:
+            type: string
+            description: The user email address.
+        description: Set a new password for the user.
+        body:
+          schema: passwordRequest
+          example: !include examples/passwordRequest-example.json
+        responses:
+          204:
+
+    /change:
+      type: base
+      post:
+        description: Change the user password current password.
+        body:
+          schema: changePasswordRequest
+          example: !include examples/changePasswordRequest-example.json
+        responses:
+          204:
+
+/accounts:
+  type: base
+  get:
+    securedBy: [null]
+    description: Search all the account in system.
+    is: [offsetPageable]
+    responses:
+      200:
+        body:
+          schema: accountsResponse
+          example: !include examples/accountsResponse-example.json
+
+  post:
+    description: Create new candidate account.
+    body:
+      schema: accountRequest
+      example: !include examples/accountRequest-example.json
+    responses:
+      201:
+        body:
+          schema: id
+          example: !include examples/id-example.json
+  /me:
+    type: base
+    get:
+      headers:
+        X-Visibility:
+          description: |
+            Access the endpoint privately or publicly, when set to public,
+            a smaller data payload is returned.
+          required: false
+          type: string
+          enum: ["public", "private"]
+          default: "private"
+      description: |
+        Find the account assigened to the actual subdomain. If no access token
+        is found for this request, a public and light version of the date will
+        be return by this endpoint.
+      responses:
+        200:
+          body:
+            schema: accountResponse
+            examples:
+              public: !include examples/accountPublicResponse-example.json
+              secured: !include examples/accountResponse-example.json
+  /{id}:
+    type: base
+    uriParameters:
+      id:
+        description: The account id
+        required: true
+        type: string
+
+    /configurations:
+      type: base
+
+      /crm:
+        type: base
+        post:
+          description: |
+            Save the account CRM configuration.
+          body:
+            schema: crmConfigurationRequest
+            example: !include examples/crmConfigurationRequest-example.json
+          responses:
+            204:
+        put:
+          description: Update the CRM configuration.
+          body:
+            schema: crmConfigurationRequest
+            example: !include examples/crmConfigurationRequest-example.json
+          responses:
+            204:
+        delete:
+          description: Delete the CRM configuration.
+          responses:
+            204:
+
+      /mail:
+        type: base
+        post:
+          description: |
+            Save the account mail configuration.
+          body:
+            schema: mailConfigurationRequest
+            example: !include examples/mailConfigurationRequest-example.json
+          responses:
+            204:
+        put:
+          description: Update mail configuration.
+          body:
+            schema: mailConfigurationRequest
+            example: !include examples/mailConfigurationRequest-example.json
+          responses:
+            204:
+        delete:
+          description: Delete mail configuration.
+          responses:
+            204:
+
+      /social/{channel}:
+        type: base
+        uriParameters:
+          channel:
+            description: The social network to register the token for.
+            required: true
+            type: string
+            enum: ["facebook", "twitter"]
+        post:
+          description: |
+            Save the account social token configuration.
+          body:
+            schema: socialTokenConfigurationRequest
+            example: !include examples/socialTokenConfigurationRequest-example.json
+          responses:
+            204:
+        put:
+          description: Update social token configuration.
+          body:
+            schema: socialTokenConfigurationRequest
+            example: !include examples/socialTokenConfigurationRequest-example.json
+          responses:
+            204:
+        delete:
+          description: Delete social token configuration.
+          responses:
+            204:
+
+      /database/{service}:
+        type: base
+        uriParameters:
+          service:
+            description: The service name to register database configuration for.
+            required: true
+            type: string
+        post:
+          description: |
+            Save the account database configuration.
+          body:
+            schema: databaseConfigurationRequest
+            example: !include examples/databaseConfigurationRequest-example.json
+          responses:
+            204:
+        put:
+          description: Update database configuration.
+          body:
+            schema: databaseConfigurationRequest
+            example: !include examples/databaseConfigurationRequest-example.json
+          responses:
+            204:
+        delete:
+          description: Delete database configuration.
+          responses:
+            204:
+
+      /apiToken/{service}:
+        type: base
+        uriParameters:
+          service:
+            description: The service name to register api tokens configuration for.
+            required: true
+            type: string
+        post:
+          description: |
+            Save the account api token configuration.
+          body:
+            schema: apiTokenConfigurationRequest
+            example: !include examples/apiTokenConfigurationRequest-example.json
+          responses:
+            204:
+        put:
+          description: Update api token configuration.
+          body:
+            schema: apiTokenConfigurationRequest
+            example: !include examples/apiTokenConfigurationRequest-example.json
+          responses:
+            204:
+        delete:
+          description: Delete api token configuration.
+          responses:
+            204:
+
+/users:
+  type: base
+  get:
+    description: Search user base on a criteria.
+    is: [
+      offsetPageable,
+      sortable: { fields: "name, createdAt", field: "createdAt" },
+      searchable: { fields: "email, phone", field: "email", value: "john.doe@domain.com" }
+    ]
+    responses:
+      200:
+        body:
+          application/json:
+            schema: userResponse
+            example: !include examples/userResponse-example.json
+
+  post:
+    is: [traceable]
+    description: Create new user for a specific party.
+    body:
+      schema: userRequest
+      example: !include examples/userRequest-example.json
+    responses:
+      201:
+        body:
+          schema: id
+          example: !include examples/id-example.json
+  /{id}:
+    uriParameters:
+      id:
+        description: The user id been verified.
+    /phoneVerification:
+      type: base
+      put:
+        description: Verify a user account via phone number.
+        body:
+          application/json:
+            schema: verifyPhoneVerificationCodeRequest
+            example: !include examples/verifyPhoneVerificationCodeRequest-example.json
+        responses:
+          204:
+
+    /phoneVerification/resendCode:
+      type: base
+      post:
+        description: Resend a user account verification code via SMS.
+        responses:
+          204:
+
+  /phoneVerification/resendCode:
+    type: base
+    post:
+      description: Resend a user account verification code via SMS.
+      body:
+        application/json:
+          schema: resendPhoneVerificationCodeRequest
+          example: !include examples/resendPhoneVerificationCodeRequest-example.json
+      responses:
+        201:
+          body:
+            schema: id
+            example: !include examples/id-example.json
+
+  /me:
+    type: base
+    get:
+      description: |
+        Search the user information assigned with a specific access token.
+      responses:
+        200:
+          body:
+            application/json:
+              schema: userResponse
+              example: !include examples/userResponse-example.json
+    put:
+      description: |
+        Update or patch the user information. All information can be updated
+        at once or on a per field basis. For example, the user name or email
+        can be updated alone in the request.
+      body:
+        application/json:
+          schema: userPatchRequest
+          example: !include examples/userPatchRequest-example.json
+      responses:
+        200:
+          body:
+            application/json:
+              schema: userResponse
+              example: !include examples/userResponse-example.json
+
+    /devices:
+      type: base
+      get:
+        description: Get all registered devices for the user.
+        responses:
+          200:
+            body:
+              application/json:
+                schema: devicesResponse
+                example: !include examples/devicesResponse-example.json
+      post:
+        description: |
+          Register a new device for the user with its FCM token for
+          notifications purposes.
+        body:
+          application/json:
+            schema: deviceRequest
+            example: !include examples/deviceRequest-example.json
+        responses:
+          201:
+            body:
+              application/json:
+                schema: id
+                example: !include examples/id-example.json
+
+      /{id}:
+        uriParameters:
+          id:
+            description: The device id.
+        type: base
+        get:
+          description: Get a single device
+          responses:
+            200:
+              body:
+                application/json:
+                  schema: deviceResponse
+                  example: !include examples/deviceResponse-example.json
+
+        delete:
+          description: Delete a single device
+          responses:
+            204:
+
+        /firebase/token:
+          put:
+            description: Update the FCM token associated with the device id.
+            body:
+              application/json:
+                schema: firebaseTokenRequest
+                example: !include examples/firebaseTokenRequest-example.json
+            responses:
+              204:
+          delete:
+            description: Delete the FCM token associated with the device id.
+            responses:
+              204:
+
+    /settings:
+      type: base
+      get:
+        description: Get a list of all apps settings for this user.
+        responses:
+          200:
+            body:
+              application/json:
+                schema: settingsResponse
+                example: !include examples/settingsResponse-example.json
+      post:
+        description: Create or replace the user apps settings.
+        body:
+          application/json:
+            schema: settingsResponse
+            example: !include examples/settingsResponse-example.json
+        responses:
+          204:
+      put:
+        description: |
+          Patch the user apps settings. All settings can be updated at once or
+          on a per field basis request.
+        body:
+          application/json:
+            schema: settingsResponse
+            example: !include examples/settingsResponse-example.json
+        responses:
+          204:
+
+    /notifications:
+      type: base
+      get:
+        description: Retrieve a list of notification for a user.
+        responses:
+          200:
+            body:
+              application/json:
+                schema: notificationsResponse
+                example: !include examples/notificationsResponse-example.json
+
+      delete:
+        description: Delete all notifications for a user.
+        responses:
+          204:
+            description: |
+              All notifications have been delete successfully for this user.
+
+      /{id}:
+        type: base
+        delete:
+          description: Detele a notification for a user.
+          responses:
+            200:
+              description: Notification delete successfully for this user.
+              body:
+                application/json:
+                  schema: id
+                  example: !include examples/id-example.json
+
+    /social:
+      /tokens:
+        type: base
+        get:
+          description: |
+            Get all the social networks registered tokens for the user. These
+            tokens are used to make post on behalf of the user to his social
+            network page.
+          responses:
+            200:
+              body:
+                schema: socialNetworkTokensResponse
+                example: !include examples/socialNetworkTokensResponse-example.json
+
+      /{channel}:
+        type: base
+        uriParameters:
+          channel:
+            enum: [facebook, twitter, google]
+        post:
+          description: |
+            Create a token for a specific social network so we can make post
+            to the user social network wall. Calling this endpoint with an
+            existing channel will NOT change nothing.
+          body:
+            application/json:
+              schema: socialNetworkTokenRequest
+              example: !include examples/socialNetworkTokenRequest-example.json
+          responses:
+            204:
+        put:
+          description: Update the user social network token for a channel.
+          body:
+            application/json:
+              schema: socialNetworkTokenRequest
+              example: !include examples/socialNetworkTokenRequest-example.json
+          responses:
+            204:
+        delete:
+          description: Delete the user social network token for a channel.
+          responses:
+            204:
+
+    /donate:
+      type: base
+      post:
+        description: Make a donation to this candidate.
+        body:
+          schema: donateRequest
+          example: !include examples/donationRequest-example.json
+        responses:
+          204:
+
+  /social:
+    /signin:
+      type: base
+      post:
+        is: [traceable]
+        description: |
+          Make a social signing for a user by exchanging a social network tocken for
+          an access token to interact with API.
+        body:
+          application/json:
+            schema: socialToken
+            example: !include examples/socialSignupRequest-example.json
+        responses:
+          200:
+            body:
+              application/json:
+                schema: accessToken
+                example: !include examples/accessTokenResponse-example.json
+
+/candidate:
+  /info:
+    type: base
+    get:
+      description: Get a candidate general information.
+      responses:
+        200:
+          body:
+            schema: candidateInfoResponse
+            example: !include examples/candidateInfoResponse-example.json
+
+  /likes:
+    type: base
+    post:
+      description: Like the candidate profile.
+      responses:
+        204:
+    delete:
+      description: Unlike the candidate profile.
+      responses:
+        204:
+
+  /share:
+    type: base
+    post:
+      description: Share a candidate profile via an external application.
+      responses:
+        204:
+
+  /comments:
+    type: base
+    post:
+      description: Add new comment for this candidate.
+      body:
+        application/json:
+          schema: commentRequest
+          example: !include examples/commentRequest-example.json
+      responses:
+        204:
+    get:
+      is: [
+        offsetPageable,
+        sortable: { fields: "createdAt", field: "createdAt" }
+      ]
+      description: Get a list of all comments for this candidate.
+      responses:
+        200:
+          body:
+            application/json:
+              schema: commentsResponse
+              example: !include examples/commentsResponse-example.json
+
+  /social:
+    /posts:
+      type: base
+      get:
+        description: |
+          Get all post made by the campaign team of the candidate on his social
+          networks pages like Facebook and Twitter.
+        responses:
+          200:
+            body:
+              application/json:
+                schema: postsResponse
+                example: !include examples/postsResponse-example.json
+      /{id}:
+        /comments:
+          type: base
+          post:
+            description: Add new comment to a candidate post.
+            body:
+              application/json:
+                schema: commentRequest
+                example: !include examples/commentRequest-example.json
+            responses:
+              204:
+          get:
+            is: [
+              offsetPageable,
+              sortable: { fields: "createdAt", field: "createdAt" }
+            ]
+            description: Get a list of all comments for this candidate post.
+            responses:
+              200:
+                body:
+                  application/json:
+                    schema: commentsResponse
+                    example: !include examples/commentsResponse-example.json
+
+/electoralCollege:
+  type: base
+  get:
+    description: Get the user home electoral college information.
+    responses:
+      200:
+        body:
+          application/json:
+            schema: electoralCollegeResponse
+            example: !include examples/electoralCollegeResponse-example.json
+
+/actions:
+  /medals:
+    type: base
+    get:
+      description: Get a list all the medals in the system.
+      responses:
+        200:
+          body:
+            application/json:
+              schema: medalsResponse
+              example: !include examples/medalsResponse-example.json
+
+    /{id}:
+      type: base
+      get:
+        description: Get detail information for the medal with the given id.
+        responses:
+          200:
+            body:
+              application/json:
+                schema: medalResponse
+                example: !include examples/medalResponse-example.json
+
+/news:
+    type: base
+    get:
+      is: [
+        offsetPageable,
+        sortable: { fields: "title, createdAt", field: "createdAt" },
+        searchable: { fields: "title, createdAt", field: "createdAt", value: "01/01/2018" }
+      ]
+      description: Get all news for a particular candidate.
+      responses:
+        200:
+          body:
+            application/json:
+              schema: newsesResponse
+              example: !include examples/newsesResponse-example.json
+
+    /{id}:
+      type: base
+      get:
+        description: Get a single news for a particular candidate.
+        responses:
+          200:
+            body:
+              application/json:
+                schema: newsResponse
+                example: !include examples/newsResponse-example.json
+
+      /likes:
+        type: base
+        post:
+          description: Like this news.
+          responses:
+            204:
+        delete:
+          description: Unlike this news.
+          responses:
+            204:
+
+      /share:
+        type: base
+        post:
+          description: Share a news via an external application.
+          responses:
+            204:
+
+      /comments:
+        type: base
+        post:
+          description: Add new comment for a news.
+          body:
+            application/json:
+              schema: commentRequest
+              example: !include examples/commentRequest-example.json
+          responses:
+            204:
+        get:
+          is: [
+            offsetPageable,
+            sortable: { fields: "createdAt", field: "createdAt" }
+          ]
+          description: Get a list of all comments for a news.
+          responses:
+            200:
+              body:
+                application/json:
+                  schema: commentsResponse
+                  example: !include examples/commentsResponse-example.json
+
+/events:
+  type: base
+  get:
+    is: [
+      offsetPageable,
+      sortable: { fields: "title, startDate", field: "startDate" },
+      searchable: { fields: "title, startDate", field: "startDate", value: "01/01/2018" }
+    ]
+    description: Get all events for a particular candidate.
+    responses:
+      200:
+        body:
+          application/json:
+            schema: eventsResponse
+            example: !include examples/eventsResponse-example.json
+
+  /me/joined:
+    get:
+      is: [
+        offsetPageable,
+        sortable: { fields: "title, createdAt", field: "createdAt" },
+        searchable: { fields: "title, createdAt", field: "createdAt", value: "01/01/2018" }
+      ]
+      description: Get all joined events for a particular candidate.
+      responses:
+        200:
+          body:
+            application/json:
+              schema: eventsResponse
+              example: !include examples/eventsResponse-example.json
+
+  /{id}:
+    type: base
+    get:
+      description: Get a single event for a particular candidate.
+      responses:
+        200:
+          body:
+            application/json:
+              schema: eventResponse
+              example: !include examples/eventResponse-example.json
+
+    /join:
+      type: base
+      post:
+        description: Join this event.
+        responses:
+          204:
+      delete:
+        description: Unjoin this event.
+        responses:
+          204:
+
+    /likes:
+      type: base
+      post:
+        description: Like this event.
+        responses:
+          204:
+      delete:
+        description: Unlike this event.
+        responses:
+          204:
+
+    /share:
+      type: base
+      post:
+        description: Share an event via an external application.
+        responses:
+          204:
+
+    /comments:
+      type: base
+      post:
+        description: Add new comment for an event.
+        body:
+          application/json:
+            schema: commentRequest
+            example: !include examples/commentRequest-example.json
+        responses:
+          204:
+      get:
+        is: [
+          offsetPageable,
+          sortable: { fields: "createdAt", field: "createdAt" }
+        ]
+        description: Get a list of all comments for an event.
+        responses:
+          200:
+            body:
+              application/json:
+                schema: commentsResponse
+                example: !include examples/commentsResponse-example.json
+
+    /calendar:
+      post:
+        description: |
+          Add or replace this event entry to my device calendar. This event
+          entry is device dependent.
+        body:
+          application/json:
+            schema: calendarEntryRequest
+            example: !include examples/calendarEntryRequest-example.json
+        responses:
+          204:
+      delete:
+        description: Delete this event entry from my calendar.
+        responses:
+          204:
+
+/videos:
+  type: base
+  get:
+    is: [
+      offsetPageable,
+      sortable: { fields: "title, createdAt", field: "createdAt" },
+      searchable: { fields: "title, createdAt", field: "createdAt", value: "01/01/2018" }
+    ]
+    description: Get all videos for a particular candidate.
+    responses:
+      200:
+        body:
+          application/json:
+            schema: videosResponse
+            example: !include examples/videosResponse-example.json
+
+  /{id}:
+    type: base
+    get:
+      description: Get a single video for a particular candidate.
+      responses:
+        200:
+          body:
+            application/json:
+              schema: videoResponse
+              example: !include examples/videoResponse-example.json
+
+    /likes:
+      type: base
+      post:
+        description: Like this video.
+        responses:
+          204:
+      delete:
+        description: Unlike this video.
+        responses:
+          204:
+
+    /share:
+      type: base
+      post:
+        description: Share a video via an external application.
+        responses:
+          204:
+
+    /comments:
+      type: base
+      post:
+        description: Add new comment for a video.
+        body:
+          application/json:
+            schema: commentRequest
+            example: !include examples/commentRequest-example.json
+        responses:
+          204:
+      get:
+        is: [
+          offsetPageable,
+          sortable: { fields: "createdAt", field: "createdAt" }
+        ]
+        description: Get a list of all comments for a video.
+        responses:
+          200:
+            body:
+              application/json:
+                schema: commentsResponse
+                example: !include examples/commentsResponse-example.json
+
+/electoralRoll:
+  get:
+    headers:
+      X-ID-Card:
+        type: string
+        description: The user government ID Card
+        example: 123-7624607-9
+    description: Search someone by id card from the electoral roll.
+    responses:
+      200:
+        body:
+          application/json:
+            schema: electoralRollVoterResponse
+            example: !include examples/electoralRollVoterResponse-example.json
+
+/campaign:
+  /volunteers:
+    type: base
+    /me:
+      delete:
+        description: Remove the logged in user as volunteer to the campaign.
+        responses:
+          204:
+
+      /tasks:
+        type: base
+        get:
+          description: Get the susbscribed task for the logged in user.
+          responses:
+            200:
+              body:
+                schema: campaignTasksResponse
+                example: !include examples/campaignTasksResponse-example.json
+
+        /{id}:
+          uriParameters:
+            id:
+              description: Task id
+              type: string
+              required: true
+          delete:
+            description: Remove a volunteer schedule for a particular task.
+            responses:
+              204:
+
+      /schedules:
+        type: base
+        get:
+          description: Get a volunteer schedule
+          responses:
+            200:
+              body:
+                application/json:
+                  schema: schedulesResponse
+                  example: !include examples/schedulesResponse-example.json
+        post:
+          description: |
+            Add one or more disponibility day and time for a volunteer.
+          body:
+            schema: schedulesRequest
+            example: !include examples/schedulesRequest-example.json
+          responses:
+            204:
+
+        /{id}:
+          uriParameters:
+            id:
+              description: The schedule id
+              required: true
+              type: string
+          delete:
+            description: Remove an entry from the user schedule.
+            responses:
+              204:
+  /militants:
+    /email/validate:
+      get:
+        headers:
+          X-Email:
+            type: string
+            description: The user email address
+            example: john.doe@domain.com
+        description: |
+          Check if a given email address is already registerd as militant.
+        responses:
+          204:
+          409:
+            description: Email is taken.
+
+    /phone/{type}/validate:
+      uriParameters:
+        type:
+          description: The phone type to validate.
+          type: string
+          default: mobile
+          required: true
+          enum: [mobile, home, work]
+      get:
+        headers:
+          X-Phone:
+            type: string
+            description: The user phone number.
+            example: (123) 456-7890
+        description: |
+          Check if a given phone number is already registerd as militant.
+        responses:
+          204:
+          409:
+            description: Phone is taken.
+
+  /team:
+    /members:
+      type: base
+      get:
+        description: Get a list of members for this campaign team.
+        responses:
+          200:
+            body:
+              schema: campaignMembersResponse
+              example: !include examples/campaignMembersResponse-example.json
+      post:
+        description: Add a member to my team.
+        body:
+          schema: idCardRequest
+          example: !include examples/idCardRequest-example.json
+        responses:
+          204:
+      delete:
+        headers:
+          X-ID-Card:
+            type: string
+            description: The user government ID Card
+            example: 123-7624607-9
+        description: Remove a member from a team.
+        responses:
+          204:
+
+      /email/validate:
+        get:
+          headers:
+            X-Email:
+              type: string
+              description: The user email address
+              example: john.doe@domain.com
+          description: |
+            Check if a given email address is already registerd as member.
+          responses:
+            204:
+            409:
+              description: Email is taken.
+
+      /phone/{type}/validate:
+        uriParameters:
+          type:
+            description: The phone type to validate.
+            type: string
+            default: mobile
+            required: true
+            enum: [mobile, home, work]
+        get:
+          headers:
+            X-Phone:
+              type: string
+              description: The user phone number.
+              example: (123) 456-7890
+          description: |
+            Check if a given phone number is already registerd as member.
+          responses:
+            204:
+            409:
+              description: Phone is taken.
+
+      /{id}/addresses:
+        uriParameters:
+          id:
+            description: The team member id.
+            type: string
+            required: true
+        put:
+          description: Path the team member address.
+          body:
+            schema: teamMemberAddressPatchRequest
+            example: !include examples/teamMemberAddressPatchRequest-example.json
+          responses:
+            204:
+
+    /levels:
+      type: base
+      get:
+        description: Get a list of levels for this campaign team.
+        responses:
+          200:
+            body:
+              schema: campaignLevelsResponse
+              example: !include examples/campaignLevelsResponse-example.json
+
+  /tasks:
+    type: base
+    get:
+      description: Get a list of all the tasks for this campaign.
+      responses:
+        200:
+          body:
+            schema: campaignTasksResponse
+            example: !include examples/campaignTasksResponse-example.json

@@ -1,0 +1,9 @@
+[
+  '{{repeat(1, 2)}}',
+  {
+    "id": '{{guid()}}',
+    "platform": '{{random("android", "ios")}}',
+    "firebaseToken": '{{guid()}}',
+    "createdAt": '{{date(new Date(2018, 0, 1), new Date(2020, 0, 1), "YYYY-MM-ddTHH:mm:ssZ")}}'
+  }
+]

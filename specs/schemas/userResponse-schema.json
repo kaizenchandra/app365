@@ -1,0 +1,239 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "fullName": {
+      "type": "string"
+    },
+    "nickname": {
+      "type": "string"
+    },
+    "idCard": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phoneCountryCode": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "profilePicture": {
+      "type": "string"
+    },
+    "birthDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "age": {
+      "type": "integer"
+    },
+    "channel": {
+      "type": "string"
+    },
+    "verified": {
+      "type": "boolean"
+    },
+    "timeZoneOffset": {
+      "type": "integer"
+    },
+    "timeZone": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "language": {
+      "type": "string"
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "socialTokens"
+      ],
+      "properties": {
+        "socialTokens": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "channel"
+            ],
+            "properties": {
+              "channel": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "awards": {
+      "type": "object",
+      "properties": {
+        "points": {
+          "type": "integer"
+        },
+        "medals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "image": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "description",
+              "image"
+            ]
+          }
+        }
+      },
+      "required": [
+        "points",
+        "medals"
+      ]
+    },
+    "address": {
+      "type": "object",
+      "properties": {
+        "country": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "iso2": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "iso2",
+            "name"
+          ]
+        },
+        "state": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name"
+          ]
+        },
+        "municipality": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name"
+          ]
+        },
+        "city": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name"
+          ]
+        },
+        "sector": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name"
+          ]
+        },
+        "line": {
+          "type": "string"
+        },
+        "street": {
+          "type": "string"
+        },
+        "home": {
+          "type": "string"
+        },
+        "apartment": {
+          "type": "string"
+        },
+        "reference": {
+          "type": "string"
+        },
+        "fullAddress": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "country",
+        "state",
+        "city",
+        "street",
+        "home"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "firstName",
+    "lastName",
+    "channel"
+  ]
+}

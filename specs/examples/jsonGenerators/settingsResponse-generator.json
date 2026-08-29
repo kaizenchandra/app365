@@ -1,0 +1,4 @@
+{
+  "isNotificationsEnabled": '{{bool()}}',
+  "isChatEnabled": '{{bool()}}'
+}

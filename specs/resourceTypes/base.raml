@@ -1,0 +1,112 @@
+post?:
+  responses:
+    200:
+      description: Success!
+    400:
+      description: |
+        The request was invalid or cannot be otherwise served. An accompanying
+        error message will explain further. Requests without
+        authentication are considered invalid and will yield this response.
+      body:
+        application/json:
+          schema: error
+          example: !include examples/error-example.json
+    401:
+      description: |
+        Authentication credentials were missing, incorrect or expired.
+    403:
+      description: |
+        The request is understood, but it has been refused or access is no
+        allowed. An accompanying error message will explain why.
+    404:
+      description: |
+        The URI requested is invalid or the resource requested, such as a user,
+        does not exists. Also returned when the requested format is not supported
+        by the requested method.
+    406:
+      description: |
+        Returned by the Search API when an invalid format is specified in the
+        request.
+    410:
+      description: |
+        This resource is gone. Used to indicate that an API endpoint has been
+        turned off.
+    420:
+      description: |
+        Returned by the version 1 Search and Trends APIs when you are being rate
+        limited.
+    422:
+      description: |
+        Returned when an image uploaded to POST is unable to be processed.
+    429:
+      description: |
+        Returned when a request cannot be served due to the application's rate
+        limit having been exhausted for the resource.
+    500:
+      description: |
+        Something is broken. Please contact us so our team can investigate.
+    502:
+      description: Our API is down or being upgraded.
+    503:
+      description: |
+        Our servers are up, but overloaded with requests. Try again later.
+    504:
+      description: |
+        Our servers are up, but the request couldn't be serviced due to
+        some failure within our stack. Try again later.
+get?:
+  responses:
+    200:
+      description: Success!
+    400:
+      description: |
+        The request was invalid or cannot be otherwise served. An accompanying
+        error message will explain further. Requests without
+        authentication are considered invalid and will yield this response.
+      body:
+        application/json:
+          schema: error
+          example: !include examples/error-example.json
+    401:
+      description: |
+        Authentication credentials were missing, incorrect or expired.
+    403:
+      description: |
+        The request is understood, but it has been refused or access is no
+        allowed. An accompanying error message will explain why.
+    404:
+      description: |
+        The URI requested is invalid or the resource requested, such as a user,
+        does not exists. Also returned when the requested format is not supported
+        by the requested method.
+    406:
+      description: |
+        Returned by the Search API when an invalid format is specified in the
+        request.
+    410:
+      description: |
+        This resource is gone. Used to indicate that an API endpoint has been
+        turned off.
+    420:
+      description: |
+        Returned by the version 1 Search and Trends APIs when you are being rate
+        limited.
+    422:
+      description: |
+        Returned when an image uploaded to POST is unable to be processed.
+    429:
+      description: |
+        Returned when a request cannot be served due to the application's rate
+        limit having been exhausted for the resource.
+    500:
+      description: |
+        Something is broken. Please contact us so our team can investigate.
+    502:
+      description: Our API is down or being upgraded.
+    503:
+      description: |
+        Our servers are up, but overloaded with requests. Try again later.
+    504:
+      description: |
+        Our servers are up, but the request couldn't be serviced due to
+        some failure within our stack. Try again later.

@@ -1,0 +1,134 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "coverPicture": {
+      "type": "string"
+    },
+    "isFlagged": {
+      "type": "boolean"
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "joinCount": {
+          "type": "integer"
+        },
+        "shareCount": {
+          "type": "integer"
+        },
+        "commentCount": {
+          "type": "integer"
+        },
+        "likeCount": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "joinCount",
+        "shareCount",
+        "commentCount",
+        "likeCount"
+      ]
+    },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "lastComment": {
+          "type": "object",
+          "properties": {
+            "content": {
+              "type": "string"
+            },
+            "createdAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "owner": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "fullName": {
+                  "type": "string"
+                },
+                "profilePicture": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "fullName",
+                "profilePicture"
+              ]
+            }
+          },
+          "required": [
+            "content",
+            "createdAt",
+            "owner"
+          ]
+        },
+        "user": {
+          "type": "object",
+          "properties": {
+            "liked": {
+              "type": "boolean"
+            },
+            "commented": {
+              "type": "boolean"
+            },
+            "shared": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "liked",
+            "commented",
+            "shared"
+          ]
+        }
+      },
+      "required": [
+        "lastComment",
+        "user"
+      ]
+    },
+    "cursor": {
+      "type": "object",
+      "properties": {
+        "next": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "next"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "title",
+    "content",
+    "createdAt",
+    "coverPicture",
+    "isFlagged",
+    "summary",
+    "meta",
+    "cursor"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "cecde092-dce0-4a5a-b0c6-17f5d7dbeb16",
+  "title": "ullamco aute velit occaecat ex",
+  "content": "Mollit anim id dolore duis proident eu sit adipisicing. Laborum cillum culpa tempor incididunt sint sint dolore. Magna duis ipsum minim velit laborum minim voluptate aliquip nulla. Velit consequat minim nostrud incididunt Lorem labore proident dolor exercitation ullamco dolore ex dolore irure. Tempor anim dolore adipisicing sit elit velit exercitation velit minim sunt dolor occaecat exercitation cupidatat. Sit laborum velit elit in esse non tempor minim non velit aliqua cillum magna.\r\nVeniam labore exercitation do incididunt ex veniam occaecat. Mollit nulla ex do magna Lorem ad sint tempor deserunt amet et cupidatat. Amet amet exercitation et elit aliquip duis velit nostrud. Dolor sint enim esse ea culpa esse in incididunt et velit.\r\n",
+  "createdAt": "2018-10-25T18:05:12+04:00",
+  "coverPicture": "http://placehold.it/400x300",
+  "isFlagged": false,
+  "summary": {
+    "joinCount": 88,
+    "shareCount": 56,
+    "commentCount": 14,
+    "likeCount": 9
+  },
+  "meta": {
+    "lastComment": {
+      "content": "Minim esse ad officia sunt ullamco pariatur. Officia magna excepteur deserunt ullamco. Culpa magna adipisicing qui ex veniam sint duis aute magna aliquip veniam.",
+      "createdAt": "2018-04-21T22:04:21+04:00",
+      "owner": {
+        "id": "cca62c6d-24b3-4324-af6e-5f507aec3589",
+        "fullName": "Roach Blevins",
+        "profilePicture": "http://placehold.it/400x300"
+      }
+    },
+    "user": {
+      "liked": false,
+      "commented": true,
+      "shared": true
+    }
+  },
+  "cursor": {
+    "next": "dd52c2b8-bb4b-4b47-b7cd-41278cf4ec39"
+  }
+}

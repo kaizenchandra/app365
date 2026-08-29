@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "email",
+    "phone",
+    "phoneCountryCode"
+  ],
+  "properties": {
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "phoneCountryCode": {
+      "type": "string"
+    }
+  }
+}

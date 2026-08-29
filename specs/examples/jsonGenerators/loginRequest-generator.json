@@ -1,0 +1,4 @@
+{
+  "email": '{{email(true)}}',
+  "password": '{{lorem(1, "words")}}{{integer(1000,9999)}}'
+}
