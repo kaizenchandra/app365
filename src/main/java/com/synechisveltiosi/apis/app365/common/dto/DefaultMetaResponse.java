@@ -1,10 +1,9 @@
-
 package com.synechisveltiosi.apis.app365.common.dto;
 
-import com.synechisveltiosi.apis.app365.common.dto.comments.CommentResponse;
-import com.synechisveltiosi.apis.app365.users.dto.UserActionMetaResponse;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.synechisveltiosi.apis.app365.common.dto.comments.CommentResponse;
+import com.synechisveltiosi.apis.app365.users.dto.UserActionMetaResponse;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;

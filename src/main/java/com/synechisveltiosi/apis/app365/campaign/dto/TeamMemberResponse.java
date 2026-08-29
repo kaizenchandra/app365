@@ -1,11 +1,11 @@
 package com.synechisveltiosi.apis.app365.campaign.dto;
 
-import com.synechisveltiosi.apis.app365.common.dto.places.AddressResponse;
-import com.synechisveltiosi.apis.app365.common.util.date.DateFormatUtils;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.synechisveltiosi.apis.app365.common.dto.places.AddressResponse;
+import com.synechisveltiosi.apis.app365.common.util.date.DateFormatUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -146,16 +146,16 @@ public class TeamMemberResponse {
         return this;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
     public Integer getAge() {
         if (birthDate != null && age == null) {
             age = (int) ChronoUnit.YEARS.between(LocalDate.ofEpochDay(birthDate.getTime()), LocalDate.now());
         }
 
         return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public Date getCreatedAt() {

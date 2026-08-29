@@ -37,6 +37,13 @@ public class RestResponseExceptionHandler extends ResponseEntityExceptionHandler
         this.environment = environment;
     }
 
+    private static String getStackTrace(final Throwable throwable) {
+        final StringWriter sw = new StringWriter();
+        final PrintWriter pw = new PrintWriter(sw, true);
+        throwable.printStackTrace(pw);
+        return sw.getBuffer().toString();
+    }
+
     @ExceptionHandler(value = {Exception.class})
     protected ResponseEntity<Object> handleException(RuntimeException ex, WebRequest request) {
         logger.error(ex.getMessage(), ex);
@@ -46,13 +53,6 @@ public class RestResponseExceptionHandler extends ResponseEntityExceptionHandler
 
         return handleExceptionInternal(ex, bodyOfResponse,
                 new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR, request);
-    }
-
-    private static String getStackTrace(final Throwable throwable) {
-        final StringWriter sw = new StringWriter();
-        final PrintWriter pw = new PrintWriter(sw, true);
-        throwable.printStackTrace(pw);
-        return sw.getBuffer().toString();
     }
 
     @ExceptionHandler(IllegalArgumentException.class)

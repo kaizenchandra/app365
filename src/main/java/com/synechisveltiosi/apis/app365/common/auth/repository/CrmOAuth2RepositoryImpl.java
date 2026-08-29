@@ -1,5 +1,8 @@
 package com.synechisveltiosi.apis.app365.common.auth.repository;
 
+import com.google.gson.FieldNamingPolicy;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.synechisveltiosi.apis.app365.accounts.config.CrmConfig;
 import com.synechisveltiosi.apis.app365.accounts.entity.Account;
 import com.synechisveltiosi.apis.app365.common.auth.dto.AccessToken;
@@ -8,9 +11,6 @@ import com.synechisveltiosi.apis.app365.common.rest.response.exception.NotAccept
 import com.synechisveltiosi.apis.app365.common.rest.response.exception.ServiceUnavailableException;
 import com.synechisveltiosi.apis.app365.common.rest.response.exception.UnauthorizedException;
 import com.synechisveltiosi.apis.app365.config.AppConfig;
-import com.google.gson.FieldNamingPolicy;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import okhttp3.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -84,7 +84,7 @@ public class CrmOAuth2RepositoryImpl implements CrmOAuth2Repository {
 
             default:
                 String message = "Unhandled http code";
-                logger.error(message + ". OAuth response: " + response.toString());
+                logger.error(message + ". OAuth response: " + response);
                 throw new NotAcceptableException(message);
         }
     }

@@ -44,7 +44,7 @@ public class ThymeleafTemplateService implements TemplateService {
 
         if (trimmedTemplateReference.contains(".")) {
             Preconditions.checkArgument(Objects.equals(getNormalizedFileExtension(trimmedTemplateReference),
-                    expectedTemplateExtension()),
+                            expectedTemplateExtension()),
                     "Expected a Thymeleaf template file with extension '%s', while '%s' was given. " +
                             "To check the default extension look at 'spring.thymeleaf.suffix' in your " +
                             "application.properties file",

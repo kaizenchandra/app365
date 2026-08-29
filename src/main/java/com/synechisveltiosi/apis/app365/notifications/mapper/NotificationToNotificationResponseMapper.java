@@ -1,8 +1,8 @@
 package com.synechisveltiosi.apis.app365.notifications.mapper;
 
-import com.synechisveltiosi.apis.app365.notifications.NotificationResponse;
 import com.synechisveltiosi.apis.app365.common.util.mapper.AbstractMapper;
 import com.synechisveltiosi.apis.app365.notifications.Notification;
+import com.synechisveltiosi.apis.app365.notifications.NotificationResponse;
 import org.springframework.stereotype.Component;
 
 @Component

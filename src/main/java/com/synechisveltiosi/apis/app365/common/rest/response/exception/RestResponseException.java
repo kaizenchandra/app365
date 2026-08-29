@@ -14,15 +14,15 @@ public class RestResponseException extends RestClientResponseException {
     protected ErrorResponse error = new ErrorResponse();
 
     public RestResponseException(HttpStatus statusCode) {
-        this(statusCode, statusCode.name(), (HttpHeaders) null, (byte[]) null, (Charset) null);
+        this(statusCode, statusCode.name(), null, null, null);
     }
 
     public RestResponseException(HttpStatus statusCode, String statusText) {
-        this(statusCode, statusText, (HttpHeaders) null, (byte[]) null, (Charset) null);
+        this(statusCode, statusText, null, null, null);
     }
 
     public RestResponseException(HttpStatus statusCode, String statusText, byte[] responseBody, Charset responseCharset) {
-        this(statusCode, statusText, (HttpHeaders) null, responseBody, responseCharset);
+        this(statusCode, statusText, null, responseBody, responseCharset);
     }
 
     public RestResponseException(HttpStatus statusCode, String statusText, HttpHeaders responseHeaders, byte[] responseBody, Charset responseCharset) {

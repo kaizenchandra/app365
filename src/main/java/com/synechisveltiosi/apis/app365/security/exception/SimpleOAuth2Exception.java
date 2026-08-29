@@ -50,6 +50,42 @@ public class SimpleOAuth2Exception extends OAuth2Exception {
         super(msg);
     }
 
+    public static OAuth2Exception create(String errorCode, String errorMessage) {
+        if (errorMessage == null) {
+            errorMessage = errorCode == null ? "OAuth Error" : errorCode;
+        }
+
+        return "invalid_client".equals(errorCode)
+                ? new InvalidClientException(errorMessage) : ("unauthorized_client".equals(errorCode)
+                ? new UnauthorizedClientException(errorMessage) : ("invalid_grant".equals(errorCode)
+                ? new InvalidGrantException(errorMessage) : ("invalid_scope".equals(errorCode)
+                ? new InvalidScopeException(errorMessage) : ("invalid_token".equals(errorCode)
+                ? new InvalidTokenException(errorMessage) : ("invalid_request".equals(errorCode)
+                ? new InvalidRequestException(errorMessage) : ("redirect_uri_mismatch".equals(errorCode)
+                ? new RedirectMismatchException(errorMessage) : ("unsupported_grant_type".equals(errorCode)
+                ? new UnsupportedGrantTypeException(errorMessage) : ("unsupported_response_type".equals(errorCode)
+                ? new UnsupportedResponseTypeException(errorMessage) : ("access_denied".equals(errorCode)
+                ? new UserDeniedAuthorizationException(errorMessage) : new OAuth2Exception(errorMessage))))))))));
+    }
+
+    public static OAuth2Exception valueOf(Map<String, String> errorParams) {
+        String errorCode = errorParams.get("error");
+        String errorMessage = errorParams.containsKey("description") ? errorParams.get("description") : null;
+        OAuth2Exception ex = create(errorCode, errorMessage);
+        Set<Map.Entry<String, String>> entries = errorParams.entrySet();
+        Iterator var5 = entries.iterator();
+
+        while (var5.hasNext()) {
+            Map.Entry<String, String> entry = (Map.Entry) var5.next();
+            String key = entry.getKey();
+            if (!"error".equals(key) && !"description".equals(key)) {
+                ex.addAdditionalInformation(key, entry.getValue());
+            }
+        }
+
+        return ex;
+    }
+
     public String getOAuth2ErrorCode() {
         return oAuth2ErrorCode;
     }
@@ -83,42 +119,6 @@ public class SimpleOAuth2Exception extends OAuth2Exception {
         this.additionalInformation.put(key, value);
     }
 
-    public static OAuth2Exception create(String errorCode, String errorMessage) {
-        if (errorMessage == null) {
-            errorMessage = errorCode == null ? "OAuth Error" : errorCode;
-        }
-
-        return (OAuth2Exception) ("invalid_client".equals(errorCode)
-                ? new InvalidClientException(errorMessage) : ("unauthorized_client".equals(errorCode)
-                ? new UnauthorizedClientException(errorMessage) : ("invalid_grant".equals(errorCode)
-                ? new InvalidGrantException(errorMessage) : ("invalid_scope".equals(errorCode)
-                ? new InvalidScopeException(errorMessage) : ("invalid_token".equals(errorCode)
-                ? new InvalidTokenException(errorMessage) : ("invalid_request".equals(errorCode)
-                ? new InvalidRequestException(errorMessage) : ("redirect_uri_mismatch".equals(errorCode)
-                ? new RedirectMismatchException(errorMessage) : ("unsupported_grant_type".equals(errorCode)
-                ? new UnsupportedGrantTypeException(errorMessage) : ("unsupported_response_type".equals(errorCode)
-                ? new UnsupportedResponseTypeException(errorMessage) : ("access_denied".equals(errorCode)
-                ? new UserDeniedAuthorizationException(errorMessage) : new OAuth2Exception(errorMessage)))))))))));
-    }
-
-    public static OAuth2Exception valueOf(Map<String, String> errorParams) {
-        String errorCode = (String) errorParams.get("error");
-        String errorMessage = errorParams.containsKey("description") ? (String) errorParams.get("description") : null;
-        OAuth2Exception ex = create(errorCode, errorMessage);
-        Set<Map.Entry<String, String>> entries = errorParams.entrySet();
-        Iterator var5 = entries.iterator();
-
-        while (var5.hasNext()) {
-            Map.Entry<String, String> entry = (Map.Entry) var5.next();
-            String key = (String) entry.getKey();
-            if (!"error".equals(key) && !"description".equals(key)) {
-                ex.addAdditionalInformation(key, (String) entry.getValue());
-            }
-        }
-
-        return ex;
-    }
-
     public String toString() {
         return this.getSummary();
     }
@@ -143,7 +143,7 @@ public class SimpleOAuth2Exception extends OAuth2Exception {
             for (Iterator var6 = additionalParams.entrySet().iterator(); var6.hasNext(); delim = ", ") {
                 //noinspection unchecked
                 Map.Entry<String, String> param = (Map.Entry) var6.next();
-                builder.append(delim).append((String) param.getKey()).append("=\"").append((String) param.getValue()).append("\"");
+                builder.append(delim).append(param.getKey()).append("=\"").append(param.getValue()).append("\"");
             }
         }
 

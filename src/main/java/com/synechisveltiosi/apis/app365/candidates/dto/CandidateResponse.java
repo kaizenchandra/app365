@@ -1,9 +1,8 @@
-
 package com.synechisveltiosi.apis.app365.candidates.dto;
 
-import com.synechisveltiosi.apis.app365.common.dto.DefaultMetaResponse;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.synechisveltiosi.apis.app365.common.dto.DefaultMetaResponse;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;

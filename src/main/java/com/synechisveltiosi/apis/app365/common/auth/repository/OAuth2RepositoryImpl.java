@@ -1,11 +1,10 @@
 package com.synechisveltiosi.apis.app365.common.auth.repository;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.synechisveltiosi.apis.app365.common.auth.dto.AccessToken;
 import com.synechisveltiosi.apis.app365.common.auth.dto.OAuthUserRequest;
 import com.synechisveltiosi.apis.app365.common.auth.dto.OAuthUserResponse;
 import com.synechisveltiosi.apis.app365.common.auth.service.OAuth2Service;
-import com.applepolitical.apis.applepolitical365.common.rest.response.exception.*;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.synechisveltiosi.apis.app365.common.rest.response.exception.*;
 import okhttp3.*;
 import org.apache.commons.lang3.StringUtils;
@@ -132,7 +131,7 @@ public class OAuth2RepositoryImpl implements OAuth2Repository {
 
             default:
                 String message = "Unable to create user";
-                logger.error(message + ". OAuth response: " + response.toString());
+                logger.error(message + ". OAuth response: " + response);
                 throw new BadRequestException(message);
         }
     }
@@ -150,7 +149,7 @@ public class OAuth2RepositoryImpl implements OAuth2Repository {
                 objectMapper.writeValueAsString(data));
 
         Request request = new Request.Builder()
-                .url(baseUrl + OAuth2Service.CREATE_USER_ENDPOINT + "/" + String.valueOf(userId))
+                .url(baseUrl + OAuth2Service.CREATE_USER_ENDPOINT + "/" + userId)
                 .addHeader("Authorization", token.prepareAccessToken())
                 .addHeader("Content-Type", MediaType.APPLICATION_JSON_VALUE)
                 .addHeader("Accept", MediaType.APPLICATION_JSON_VALUE)
@@ -165,7 +164,7 @@ public class OAuth2RepositoryImpl implements OAuth2Repository {
 
             default:
                 String message = "Unable to active the user.";
-                logger.error(message + ". OAuth response: " + response.toString());
+                logger.error(message + ". OAuth response: " + response);
                 throw new RuntimeException(message);
         }
     }
@@ -184,7 +183,7 @@ public class OAuth2RepositoryImpl implements OAuth2Repository {
                 objectMapper.writeValueAsString(data));
 
         Request request = new Request.Builder()
-                .url(baseUrl + OAuth2Service.CHANGE_USER_PASSWORD_ENDPOINT + "/" + String.valueOf(userId))
+                .url(baseUrl + OAuth2Service.CHANGE_USER_PASSWORD_ENDPOINT + "/" + userId)
                 .addHeader("Authorization", token.prepareAccessToken())
                 .addHeader("Content-Type", MediaType.APPLICATION_JSON_VALUE)
                 .addHeader("Accept", MediaType.APPLICATION_JSON_VALUE)
@@ -202,7 +201,7 @@ public class OAuth2RepositoryImpl implements OAuth2Repository {
 
             default:
                 String message = "Unable to change the user password.";
-                logger.error(message + ". OAuth response: " + response.toString());
+                logger.error(message + ". OAuth response: " + response);
                 throw new RuntimeException(message);
         }
     }
@@ -220,7 +219,7 @@ public class OAuth2RepositoryImpl implements OAuth2Repository {
                 objectMapper.writeValueAsString(data));
 
         Request request = new Request.Builder()
-                .url(baseUrl + OAuth2Service.RESET_USER_PASSWORD_ENDPOINT + "/" + String.valueOf(userId))
+                .url(baseUrl + OAuth2Service.RESET_USER_PASSWORD_ENDPOINT + "/" + userId)
                 .addHeader("Authorization", token.prepareAccessToken())
                 .addHeader("Content-Type", MediaType.APPLICATION_JSON_VALUE)
                 .addHeader("Accept", MediaType.APPLICATION_JSON_VALUE)
@@ -235,7 +234,7 @@ public class OAuth2RepositoryImpl implements OAuth2Repository {
 
             default:
                 String message = "Unable to reset the user password.";
-                logger.error(message + ". OAuth response: " + response.toString());
+                logger.error(message + ". OAuth response: " + response);
                 throw new RuntimeException(message);
         }
     }
@@ -262,7 +261,7 @@ public class OAuth2RepositoryImpl implements OAuth2Repository {
 
             default:
                 String message = "Unable to logout the user.";
-                logger.error(message + ". OAuth response: " + response.toString());
+                logger.error(message + ". OAuth response: " + response);
                 throw new RuntimeException(message);
         }
     }
@@ -285,7 +284,7 @@ public class OAuth2RepositoryImpl implements OAuth2Repository {
 
             default:
                 String message = "Unhandled http code";
-                logger.error(message + ". OAuth response: " + response.toString());
+                logger.error(message + ". OAuth response: " + response);
                 throw new NotAcceptableException(message);
         }
     }

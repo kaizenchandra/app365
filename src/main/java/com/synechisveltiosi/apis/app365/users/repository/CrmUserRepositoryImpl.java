@@ -1,5 +1,7 @@
 package com.synechisveltiosi.apis.app365.users.repository;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import com.synechisveltiosi.apis.app365.accounts.config.CrmConfig;
 import com.synechisveltiosi.apis.app365.accounts.entity.Account;
 import com.synechisveltiosi.apis.app365.accounts.helpers.AccountHelper;
@@ -9,8 +11,6 @@ import com.synechisveltiosi.apis.app365.common.dto.places.AddressResponse;
 import com.synechisveltiosi.apis.app365.common.rest.response.crm.ErrorHelper;
 import com.synechisveltiosi.apis.app365.common.rest.response.exception.BadRequestException;
 import com.synechisveltiosi.apis.app365.config.AppConfig;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.Gson;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;

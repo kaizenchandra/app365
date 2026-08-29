@@ -12,11 +12,9 @@ import java.util.UUID;
 @Table(name = "v_team_members")
 public class ExtendedTeamMember implements Serializable {
 
-    private static final long serialVersionUID = 0L;
-
     public static final Integer DEFAULT_PAGE = 0;
     public static final Integer MAX_PAGE_SIZE = 25;
-
+    private static final long serialVersionUID = 0L;
     @Id
     @Column(name = "id")
     private Long id;

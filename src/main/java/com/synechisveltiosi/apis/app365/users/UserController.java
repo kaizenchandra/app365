@@ -1,5 +1,6 @@
 package com.synechisveltiosi.apis.app365.users;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.synechisveltiosi.apis.app365.accounts.entity.Account;
 import com.synechisveltiosi.apis.app365.accounts.exception.AccountNotFoundException;
 import com.synechisveltiosi.apis.app365.accounts.service.AccountService;
@@ -33,7 +34,6 @@ import com.synechisveltiosi.apis.app365.common.util.StringHelper;
 import com.synechisveltiosi.apis.app365.common.util.UserSocialToken;
 import com.synechisveltiosi.apis.app365.common.util.domain.DefaultPageable;
 import com.synechisveltiosi.apis.app365.common.util.mapper.Mapper;
-import com.applepolitical.apis.applepolitical365.devices.*;
 import com.synechisveltiosi.apis.app365.devices.*;
 import com.synechisveltiosi.apis.app365.devices.mapper.DeviceMapper;
 import com.synechisveltiosi.apis.app365.notifications.Notification;
@@ -47,7 +47,6 @@ import com.synechisveltiosi.apis.app365.users.exception.UserNotFoundException;
 import com.synechisveltiosi.apis.app365.users.mapper.UserMapper;
 import com.synechisveltiosi.apis.app365.users.repository.CrmUserRepository;
 import com.synechisveltiosi.apis.app365.users.service.UserService;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

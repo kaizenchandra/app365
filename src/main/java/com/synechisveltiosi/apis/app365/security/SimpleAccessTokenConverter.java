@@ -18,9 +18,9 @@ import java.util.*;
 
 public class SimpleAccessTokenConverter implements AccessTokenConverter {
 
+    private final UserService userService;
     private UserAuthenticationConverter userTokenConverter = new DefaultUserAuthenticationConverter();
     private boolean includeGrantType;
-    private final UserService userService;
 
     public SimpleAccessTokenConverter(UserService userService) {
         this.userService = userService;
@@ -114,14 +114,14 @@ public class SimpleAccessTokenConverter implements AccessTokenConverter {
         }
 
         //noinspection unchecked
-        Set<String> resourceIds = new LinkedHashSet((Collection) (map.containsKey("aud") ? this.getAudience(map) : Collections.emptySet()));
+        Set<String> resourceIds = new LinkedHashSet(map.containsKey("aud") ? this.getAudience(map) : Collections.emptySet());
         Collection<? extends GrantedAuthority> authorities = null;
         if (user == null && map.containsKey("authorities")) {
             String[] roles = (String[]) ((Collection) map.get("authorities")).toArray(new String[0]);
             authorities = AuthorityUtils.createAuthorityList(roles);
         }
 
-        OAuth2Request request = new OAuth2Request(parameters, clientId, authorities, true, scope, resourceIds, (String) null, (Set) null, (Map) null);
+        OAuth2Request request = new OAuth2Request(parameters, clientId, authorities, true, scope, resourceIds, null, null, null);
 
         OAuth2Authentication oAuth2Authentication = new OAuth2Authentication(request, user);
         oAuth2Authentication.setDetails(newUser);
@@ -145,9 +145,9 @@ public class SimpleAccessTokenConverter implements AccessTokenConverter {
         Set<String> scope = Collections.emptySet();
         if (map.containsKey("scope")) {
             Object scopeObj = map.get("scope");
-            if (String.class.isInstance(scopeObj)) {
+            if (scopeObj instanceof String) {
                 //noinspection unchecked
-                scope = new LinkedHashSet(Arrays.asList(((String) String.class.cast(scopeObj)).split(" ")));
+                scope = new LinkedHashSet(Arrays.asList(((String) scopeObj).split(" ")));
             } else if (Collection.class.isAssignableFrom(scopeObj.getClass())) {
                 //noinspection unchecked
                 Collection<String> scopeColl = (Collection) scopeObj;
@@ -158,6 +158,6 @@ public class SimpleAccessTokenConverter implements AccessTokenConverter {
         }
 
         //noinspection unchecked
-        return (Set) scope;
+        return scope;
     }
 }

@@ -1,9 +1,11 @@
 package com.synechisveltiosi.apis.app365.campaign.repository.crm;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import com.synechisveltiosi.apis.app365.accounts.config.CrmConfig;
 import com.synechisveltiosi.apis.app365.accounts.entity.Account;
 import com.synechisveltiosi.apis.app365.accounts.helpers.AccountHelper;
-import com.applepolitical.apis.applepolitical365.campaign.dto.*;
 import com.synechisveltiosi.apis.app365.campaign.dto.*;
 import com.synechisveltiosi.apis.app365.campaign.entity.TeamLevel;
 import com.synechisveltiosi.apis.app365.common.auth.SessionUtils;
@@ -13,9 +15,6 @@ import com.synechisveltiosi.apis.app365.common.rest.response.crm.ErrorHelper;
 import com.synechisveltiosi.apis.app365.common.rest.response.pagination.PageResponse;
 import com.synechisveltiosi.apis.app365.config.AppConfig;
 import com.synechisveltiosi.apis.app365.users.entity.User;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.Gson;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;

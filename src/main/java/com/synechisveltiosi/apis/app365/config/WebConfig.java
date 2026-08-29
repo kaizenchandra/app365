@@ -12,17 +12,17 @@
 
 package com.synechisveltiosi.apis.app365.config;
 
-import com.synechisveltiosi.apis.app365.common.http.request.HttpHeader;
-import com.synechisveltiosi.apis.app365.common.util.date.DateFormatUtils;
-import com.synechisveltiosi.apis.app365.common.util.enums.EnumJsonDeserializer;
-import com.synechisveltiosi.apis.app365.common.util.enums.EnumJsonSerializer;
-import com.synechisveltiosi.apis.app365.common.util.enums.StringToEnumConverterFactory;
 import com.authy.AuthyApiClient;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.synechisveltiosi.apis.app365.common.http.request.HttpHeader;
+import com.synechisveltiosi.apis.app365.common.util.date.DateFormatUtils;
+import com.synechisveltiosi.apis.app365.common.util.enums.EnumJsonDeserializer;
+import com.synechisveltiosi.apis.app365.common.util.enums.EnumJsonSerializer;
+import com.synechisveltiosi.apis.app365.common.util.enums.StringToEnumConverterFactory;
 import com.textmagic.sdk.RestClient;
 import okhttp3.OkHttpClient;
 import org.springframework.beans.factory.annotation.Value;

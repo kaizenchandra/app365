@@ -1,8 +1,8 @@
 package com.synechisveltiosi.apis.app365.common.util.mapper;
 
-import com.synechisveltiosi.apis.app365.common.SocialNetworkProvider;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.synechisveltiosi.apis.app365.common.SocialNetworkProvider;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UserSocialTokenResponse {

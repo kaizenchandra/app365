@@ -14,7 +14,6 @@ import com.synechisveltiosi.apis.app365.common.repository.DefaultRsqlRepository;
 import com.synechisveltiosi.apis.app365.common.repository.RsqlRepository;
 import com.synechisveltiosi.apis.app365.common.rest.response.ApiStatusCode;
 import com.synechisveltiosi.apis.app365.common.rest.response.ErrorResponse;
-import com.applepolitical.apis.applepolitical365.common.rest.response.exception.*;
 import com.synechisveltiosi.apis.app365.common.rest.response.exception.*;
 import com.synechisveltiosi.apis.app365.common.service.social.Google.GoogleService;
 import com.synechisveltiosi.apis.app365.common.service.social.SocialNetworkService;

@@ -1,15 +1,14 @@
 package com.synechisveltiosi.apis.app365.campaign.repository.crm;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.synechisveltiosi.apis.app365.accounts.config.CrmConfig;
 import com.synechisveltiosi.apis.app365.accounts.entity.Account;
 import com.synechisveltiosi.apis.app365.campaign.Organism;
 import com.synechisveltiosi.apis.app365.common.auth.dto.AccessToken;
 import com.synechisveltiosi.apis.app365.common.auth.repository.CrmOAuth2Repository;
 import com.synechisveltiosi.apis.app365.common.rest.response.crm.ErrorHelper;
-import com.applepolitical.apis.applepolitical365.common.rest.response.exception.*;
 import com.synechisveltiosi.apis.app365.config.AppConfig;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;

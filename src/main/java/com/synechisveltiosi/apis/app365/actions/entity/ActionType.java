@@ -12,8 +12,6 @@ import java.util.List;
 @Table(name = "action_types")
 public class ActionType implements Serializable {
 
-    private static final long serialVersionUID = 0L;
-
     public static final String ID_CARD = "ID_CARD";
     public static final String ADDRESS = "ADDRESS";
     public static final String PHONE = "PHONE";
@@ -39,12 +37,11 @@ public class ActionType implements Serializable {
     public static final String VIDEO_SHARE = "VIDEO_SHARE";
     public static final String VIDEO_LIKE = "VIDEO_LIKE";
     public static final String VIDEO_COMMENT = "VIDEO_COMMENT";
-
     public static final List<String> ALL = Arrays.asList(ID_CARD, ADDRESS, PHONE, MEMBER, LEVEL, POINT, DONATION,
             VOLUNTEER_SCHEDULE, SHARE, LIKE, COMMENT, CANDIDATE_SHARE, CANDIDATE_LIKE, CANDIDATE_COMMENT,
             CANDIDATE_POST_COMMENT, EVENT_JOIN, EVENT_SHARE, EVENT_LIKE, EVENT_COMMENT, NEWS_SHARE, NEWS_LIKE,
             NEWS_COMMENT, VIDEO_SHARE, VIDEO_LIKE, VIDEO_COMMENT);
-
+    private static final long serialVersionUID = 0L;
     @Id
     @Column(name = "name")
     private String name;
@@ -54,6 +51,14 @@ public class ActionType implements Serializable {
 
     public ActionType() {
 
+    }
+
+    public static boolean isValid(String name) {
+        return ActionType.ALL.contains(name);
+    }
+
+    public static void assertTypeName(String name) throws IllegalArgumentException {
+        if (!ActionType.isValid(name)) throw new IllegalArgumentException("Invalid action type name");
     }
 
     public String getName() {
@@ -70,13 +75,5 @@ public class ActionType implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public static boolean isValid(String name) {
-        return ActionType.ALL.contains(name);
-    }
-
-    public static void assertTypeName(String name) throws IllegalArgumentException {
-        if (!ActionType.isValid(name)) throw new IllegalArgumentException("Invalid action type name");
     }
 }

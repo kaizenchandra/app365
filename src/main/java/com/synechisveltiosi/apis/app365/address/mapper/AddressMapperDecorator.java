@@ -2,7 +2,6 @@ package com.synechisveltiosi.apis.app365.address.mapper;
 
 import com.synechisveltiosi.apis.app365.address.entity.Address;
 import com.synechisveltiosi.apis.app365.citizens.entity.CitizenAddress;
-import com.applepolitical.apis.applepolitical365.common.dto.places.*;
 import com.synechisveltiosi.apis.app365.common.dto.places.*;
 import org.apache.commons.lang3.StringUtils;
 

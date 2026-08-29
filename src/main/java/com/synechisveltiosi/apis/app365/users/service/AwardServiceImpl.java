@@ -8,7 +8,6 @@ import com.synechisveltiosi.apis.app365.actions.service.MedalService;
 import com.synechisveltiosi.apis.app365.campaign.service.TeamMemberService;
 import com.synechisveltiosi.apis.app365.campaign.service.VolunteerService;
 import com.synechisveltiosi.apis.app365.candidates.entity.CandidateDonation;
-import com.applepolitical.apis.applepolitical365.candidates.service.*;
 import com.synechisveltiosi.apis.app365.candidates.service.*;
 import com.synechisveltiosi.apis.app365.common.rest.response.exception.BadRequestException;
 import com.synechisveltiosi.apis.app365.events.service.EventCommentService;

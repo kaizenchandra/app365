@@ -1,4 +1,3 @@
-
 package com.synechisveltiosi.apis.app365.common.auth.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

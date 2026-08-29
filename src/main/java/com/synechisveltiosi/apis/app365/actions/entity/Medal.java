@@ -17,12 +17,10 @@ import java.util.UUID;
 @Table(name = "medals")
 public class Medal extends BaseEntity {
 
-    private static final long serialVersionUID = 0L;
-
     public static final Integer DEFAULT_PAGE = 0;
     public static final Integer MAX_PAGE_SIZE = 25;
     public static final List<String> SORTABLE_FIELDS = Arrays.asList(Sortable.NAME, Sortable.POINTS);
-
+    private static final long serialVersionUID = 0L;
     @Column(name = "medal_id")
     private String medalId;
 

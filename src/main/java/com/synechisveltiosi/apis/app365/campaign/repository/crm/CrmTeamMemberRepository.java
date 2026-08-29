@@ -1,7 +1,6 @@
 package com.synechisveltiosi.apis.app365.campaign.repository.crm;
 
 import com.synechisveltiosi.apis.app365.accounts.entity.Account;
-import com.applepolitical.apis.applepolitical365.campaign.dto.*;
 import com.synechisveltiosi.apis.app365.campaign.dto.*;
 import com.synechisveltiosi.apis.app365.campaign.entity.TeamLevel;
 import com.synechisveltiosi.apis.app365.users.entity.User;

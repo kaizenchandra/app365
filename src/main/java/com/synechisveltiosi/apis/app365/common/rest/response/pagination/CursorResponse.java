@@ -1,4 +1,3 @@
-
 package com.synechisveltiosi.apis.app365.common.rest.response.pagination;
 
 import com.fasterxml.jackson.annotation.JsonInclude;

@@ -27,11 +27,9 @@ import java.util.UUID;
         })
 public class TeamMember extends BaseEntity {
 
-    private static final long serialVersionUID = 0L;
-
     public static final Integer DEFAULT_PAGE = 0;
     public static final Integer MAX_PAGE_SIZE = 25;
-
+    private static final long serialVersionUID = 0L;
     @Column(name = "parent_id")
     private Long parentId;
 

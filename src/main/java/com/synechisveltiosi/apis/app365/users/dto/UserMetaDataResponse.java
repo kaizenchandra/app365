@@ -1,8 +1,8 @@
 package com.synechisveltiosi.apis.app365.users.dto;
 
-import com.synechisveltiosi.apis.app365.common.util.mapper.UserSocialTokenResponse;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.synechisveltiosi.apis.app365.common.util.mapper.UserSocialTokenResponse;
 
 import java.util.List;
 

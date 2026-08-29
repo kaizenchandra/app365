@@ -1,9 +1,9 @@
 package com.synechisveltiosi.apis.app365.campaign.dto;
 
-import com.synechisveltiosi.apis.app365.common.util.date.DateFormatUtils;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.synechisveltiosi.apis.app365.common.util.date.DateFormatUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Date;

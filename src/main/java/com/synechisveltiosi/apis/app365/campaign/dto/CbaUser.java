@@ -1,9 +1,9 @@
 package com.synechisveltiosi.apis.app365.campaign.dto;
 
-import com.synechisveltiosi.apis.app365.users.dto.CbaHeaderResponse;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.synechisveltiosi.apis.app365.users.dto.CbaHeaderResponse;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)

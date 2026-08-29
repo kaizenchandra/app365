@@ -19,11 +19,8 @@ import java.util.UUID;
         @TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)})
 public class Notification extends BaseEntity {
 
-    private static final long serialVersionUID = 0L;
-
     public static final Integer DEFAULT_PAGE = 0;
     public static final Integer MAX_PAGE_SIZE = 25;
-
     public static final String NOTIFICATION_EVENT_PUBLISHED_JOIN = "event.published.join";
     public static final String NOTIFICATION_ARTICLE_PUBLISHED = "article.published";
     public static final String NOTIFICATION_ARTICLES_PUBLISHED = "articles.published";
@@ -32,7 +29,7 @@ public class Notification extends BaseEntity {
     public static final String NOTIFICATION_INFO_HTML = "info.html";
     public static final String NOTIFICATION_USER_MEDALS_LOST = "user.medals.lost";
     public static final String NOTIFICATION_USER_MEDALS_AWARDED = "user.medals.awarded";
-
+    private static final long serialVersionUID = 0L;
     @Column(name = "notification_id", unique = true)
     private String notificationId;
 

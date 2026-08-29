@@ -1,7 +1,5 @@
 package com.synechisveltiosi.apis.app365.address.service;
 
-import com.applepolitical.apis.applepolitical365.address.entity.*;
-import com.applepolitical.apis.applepolitical365.address.exception.*;
 import com.synechisveltiosi.apis.app365.address.entity.*;
 import com.synechisveltiosi.apis.app365.address.exception.*;
 import com.synechisveltiosi.apis.app365.address.repository.AddressRepository;

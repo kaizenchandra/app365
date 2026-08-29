@@ -13,13 +13,11 @@ import java.util.*;
 @Table(name = "events")
 public class Event extends BaseEntity {
 
-    private static final long serialVersionUID = 0L;
-
     public static final Integer DEFAULT_PAGE = 0;
     public static final Integer MAX_PAGE_SIZE = 25;
     public static final List<String> SORTABLE_FIELDS = Arrays.asList(Sortable.TITLE, Sortable.START_DATE);
     public static final List<String> SEARCHABLE_FIELDS = Arrays.asList(Searchable.TITLE, Searchable.START_DATE);
-
+    private static final long serialVersionUID = 0L;
     @Column(name = "event_id")
     private String eventId;
 
@@ -193,14 +191,14 @@ public class Event extends BaseEntity {
         return comments;
     }
 
+    public void setComments(List<EventComment> comments) {
+        this.comments = comments;
+    }
+
     public EventComment getLastComment() {
         if (getComments() == null || getComments().isEmpty()) return null;
 
         return getComments().get(0);
-    }
-
-    public void setComments(List<EventComment> comments) {
-        this.comments = comments;
     }
 
     public Date getStartDate() {

@@ -34,6 +34,54 @@ public class MilitantRequest {
     @JsonProperty("address")
     private Map<String, Object> address;
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getIdCard() {
+        return idCard;
+    }
+
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Phone getPhone() {
+        return phone;
+    }
+
+    public void setPhone(Phone phone) {
+        this.phone = phone;
+    }
+
+    public Associated getAssociated() {
+        return associated;
+    }
+
+    public void setAssociated(Associated associated) {
+        this.associated = associated;
+    }
+
+    public Map<String, Object> getAddress() {
+        return address;
+    }
+
+    public void setAddress(Map<String, Object> address) {
+        this.address = address;
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class Phone {
 
@@ -127,53 +175,5 @@ public class MilitantRequest {
         public void setName(String name) {
             this.name = name;
         }
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getIdCard() {
-        return idCard;
-    }
-
-    public void setIdCard(String idCard) {
-        this.idCard = idCard;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Phone getPhone() {
-        return phone;
-    }
-
-    public void setPhone(Phone phone) {
-        this.phone = phone;
-    }
-
-    public Associated getAssociated() {
-        return associated;
-    }
-
-    public void setAssociated(Associated associated) {
-        this.associated = associated;
-    }
-
-    public Map<String, Object> getAddress() {
-        return address;
-    }
-
-    public void setAddress(Map<String, Object> address) {
-        this.address = address;
     }
 }

@@ -68,7 +68,7 @@ public class VideoController {
 
         List<VideoResponse> responseData = VideoHelper.processVideoMetadata(loggedUser.getId(), videoPage.getContent());
 
-        if (! summary) {
+        if (!summary) {
             responseData = VideoHelper.nullifyListOnlyFields(responseData);
         }
 

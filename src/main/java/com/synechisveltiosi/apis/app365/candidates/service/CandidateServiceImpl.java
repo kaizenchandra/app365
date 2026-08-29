@@ -2,7 +2,6 @@ package com.synechisveltiosi.apis.app365.candidates.service;
 
 import com.synechisveltiosi.apis.app365.actions.entity.ActionType;
 import com.synechisveltiosi.apis.app365.candidates.CandidateNotFoundException;
-import com.applepolitical.apis.applepolitical365.candidates.entity.*;
 import com.synechisveltiosi.apis.app365.candidates.entity.*;
 import com.synechisveltiosi.apis.app365.candidates.repository.CandidateRepository;
 import com.synechisveltiosi.apis.app365.common.rest.response.exception.BadRequestException;

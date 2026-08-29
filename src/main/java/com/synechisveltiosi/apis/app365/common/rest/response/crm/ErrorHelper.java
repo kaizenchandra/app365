@@ -1,12 +1,9 @@
 package com.synechisveltiosi.apis.app365.common.rest.response.crm;
 
-import com.applepolitical.apis.applepolitical365.campaign.*;
-import com.applepolitical.apis.applepolitical365.campaign.exception.*;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.synechisveltiosi.apis.app365.campaign.*;
 import com.synechisveltiosi.apis.app365.campaign.exception.*;
 import com.synechisveltiosi.apis.app365.common.rest.response.ErrorResponse;
-import com.applepolitical.apis.applepolitical365.common.rest.response.exception.*;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.synechisveltiosi.apis.app365.common.rest.response.exception.*;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
@@ -56,7 +53,7 @@ public final class ErrorHelper {
 
             default:
                 String message = "Unhandled http code";
-                logger.error(message + ". OAuth response: " + response.toString());
+                logger.error(message + ". OAuth response: " + response);
         }
 
         return exception;

@@ -51,7 +51,7 @@ public class TaskServiceImpl implements TaskService {
 
         Optional<Task> task = findById(taskId);
 
-        if (! task.isPresent()) {
+        if (!task.isPresent()) {
             throw new TaskNotFoundException();
         }
 

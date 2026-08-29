@@ -16,11 +16,6 @@ import java.util.List;
 @Component
 public class ScheduleToScheduleResponseMapper extends AbstractMapper<Schedule, ScheduleResponse> {
 
-    @Override
-    public ScheduleResponse map(Schedule schedule) {
-        return ScheduleMapper.INSTANCE.from(schedule);
-    }
-
     public static ScheduleResponse mapForSingleTask(List<Schedule> schedules) {
         if (schedules == null || schedules.isEmpty()) return null;
 
@@ -48,5 +43,10 @@ public class ScheduleToScheduleResponseMapper extends AbstractMapper<Schedule, S
         });
 
         return scheduleResponse;
+    }
+
+    @Override
+    public ScheduleResponse map(Schedule schedule) {
+        return ScheduleMapper.INSTANCE.from(schedule);
     }
 }

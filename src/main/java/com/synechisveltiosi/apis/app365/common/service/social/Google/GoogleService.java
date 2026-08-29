@@ -1,14 +1,14 @@
 package com.synechisveltiosi.apis.app365.common.service.social.Google;
 
-import com.synechisveltiosi.apis.app365.common.service.social.SocialNetworkService;
-import com.synechisveltiosi.apis.app365.common.util.RegistrationChannel;
-import com.synechisveltiosi.apis.app365.users.entity.User;
 import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeTokenRequest;
 import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
 import com.google.api.client.googleapis.auth.oauth2.GoogleTokenResponse;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
+import com.synechisveltiosi.apis.app365.common.service.social.SocialNetworkService;
+import com.synechisveltiosi.apis.app365.common.util.RegistrationChannel;
+import com.synechisveltiosi.apis.app365.users.entity.User;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;

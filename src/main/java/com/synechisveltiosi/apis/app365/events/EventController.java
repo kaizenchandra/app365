@@ -45,7 +45,7 @@ public class EventController {
 
     private final EventService eventService;
     private final Mapper<EventComment, CommentResponse> commentResponseMapper;
-    private FileSystem fileSystem;
+    private final FileSystem fileSystem;
 
     @Autowired
     public EventController(EventService eventService, Mapper<EventComment, CommentResponse> commentResponseMapper, FileSystem fileSystem) {
@@ -61,7 +61,7 @@ public class EventController {
             @RequestParam(value = "query", required = false) String query,
             @RequestParam(value = "sortBy", required = false) String sortBy,
             @RequestParam(value = "summary", required = false) boolean summary
-            ) {
+    ) {
 
         User loggedUser = SessionUtils.getLoggedUser();
 
@@ -77,7 +77,7 @@ public class EventController {
 
         List<EventResponse> responseData = EventHelper.processEventUserHasJoined(loggedUser.getId(), eventPage.getContent());
 
-        if (! summary) {
+        if (!summary) {
             responseData = EventHelper.nullifyListOnlyFields(responseData);
         }
 
@@ -150,7 +150,7 @@ public class EventController {
 
         Optional<Event> foundEvent = eventService.findById(id);
 
-        if (! foundEvent.isPresent()) {
+        if (!foundEvent.isPresent()) {
             throw new EventNotFoundException();
         }
 
@@ -171,7 +171,7 @@ public class EventController {
 
         Optional<Event> foundEvent = eventService.findById(id);
 
-        if (! foundEvent.isPresent()) {
+        if (!foundEvent.isPresent()) {
             throw new EventNotFoundException();
         }
 

@@ -1,10 +1,9 @@
-
 package com.synechisveltiosi.apis.app365.common.auth.dto;
 
-import com.synechisveltiosi.apis.app365.common.util.RegistrationChannel;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.synechisveltiosi.apis.app365.common.util.RegistrationChannel;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;

@@ -13,10 +13,8 @@ import org.springframework.util.StringUtils;
 @Service
 public class FacebookService implements SocialNetworkService {
 
-    private static final String FACEBOOK_USER_PROFILE_URL_TEMPLATE = "https://graph.facebook.com/%s/picture?type=large";
-
     public static final String[] fields = new String[]{"id", "first_name", "last_name", "email", "gender", "birthday"};
-
+    private static final String FACEBOOK_USER_PROFILE_URL_TEMPLATE = "https://graph.facebook.com/%s/picture?type=large";
     private final FacebookConnectionFactory factory;
 
     public FacebookService(FacebookConnectionFactory factory) {

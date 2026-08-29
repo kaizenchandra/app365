@@ -1,11 +1,10 @@
 package com.synechisveltiosi.apis.app365.users.dto;
 
-import com.synechisveltiosi.apis.app365.campaign.SupportSource;
-import com.synechisveltiosi.apis.app365.campaign.dto.MilitantRequest;
-import com.applepolitical.apis.applepolitical365.common.dto.places.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.synechisveltiosi.apis.app365.campaign.SupportSource;
+import com.synechisveltiosi.apis.app365.campaign.dto.MilitantRequest;
 import com.synechisveltiosi.apis.app365.common.dto.places.*;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;

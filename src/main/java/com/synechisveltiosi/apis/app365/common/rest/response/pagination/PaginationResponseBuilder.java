@@ -2,7 +2,7 @@ package com.synechisveltiosi.apis.app365.common.rest.response.pagination;
 
 public class PaginationResponseBuilder {
 
-    private PaginationResponse paginationResponse;
+    private final PaginationResponse paginationResponse;
 
     private PaginationResponseBuilder() {
         paginationResponse = new PaginationResponse();

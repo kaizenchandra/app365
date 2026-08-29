@@ -1,4 +1,3 @@
-
 package com.synechisveltiosi.apis.app365.calendar.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;

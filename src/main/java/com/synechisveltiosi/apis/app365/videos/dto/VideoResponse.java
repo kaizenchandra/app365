@@ -1,14 +1,13 @@
-
 package com.synechisveltiosi.apis.app365.videos.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.synechisveltiosi.apis.app365.common.dto.DefaultMetaResponse;
 import com.synechisveltiosi.apis.app365.common.rest.response.pagination.CursorResponse;
 import com.synechisveltiosi.apis.app365.common.util.date.DateFormatUtils;
 import com.synechisveltiosi.apis.app365.users.dto.UserActionSummaryResponse;
 import com.synechisveltiosi.apis.app365.users.dto.UserOwnerResponse;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;

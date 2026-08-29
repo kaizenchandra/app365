@@ -59,7 +59,7 @@ public class NewsController {
             @RequestParam(value = "query", required = false) String query,
             @RequestParam(value = "sortBy", required = false) String sortBy,
             @RequestParam(value = "summary", required = false) boolean summary
-            ) {
+    ) {
 
         User loggedUser = SessionUtils.getLoggedUser();
 
@@ -75,7 +75,7 @@ public class NewsController {
 
         List<NewsResponse> responseData = NewsHelper.processNewsMetadata(loggedUser.getId(), newsPage.getContent());
 
-        if (! summary) {
+        if (!summary) {
             responseData = NewsHelper.nullifyListOnlyFields(responseData);
         }
 
@@ -119,7 +119,7 @@ public class NewsController {
 
         Optional<News> foundNews = newsService.findById(id);
 
-        if (! foundNews.isPresent()) {
+        if (!foundNews.isPresent()) {
             throw new NewsNotFoundException();
         }
 
@@ -140,7 +140,7 @@ public class NewsController {
 
         Optional<News> foundNews = newsService.findById(id);
 
-        if (! foundNews.isPresent()) {
+        if (!foundNews.isPresent()) {
             throw new NewsNotFoundException();
         }
 

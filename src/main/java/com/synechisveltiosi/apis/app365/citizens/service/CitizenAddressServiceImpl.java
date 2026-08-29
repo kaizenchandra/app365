@@ -4,8 +4,6 @@ import com.synechisveltiosi.apis.app365.address.entity.City;
 import com.synechisveltiosi.apis.app365.address.entity.Municipality;
 import com.synechisveltiosi.apis.app365.address.entity.Sector;
 import com.synechisveltiosi.apis.app365.address.entity.State;
-import com.applepolitical.apis.applepolitical365.address.exception.*;
-import com.applepolitical.apis.applepolitical365.address.service.*;
 import com.synechisveltiosi.apis.app365.address.exception.*;
 import com.synechisveltiosi.apis.app365.address.service.*;
 import com.synechisveltiosi.apis.app365.citizens.entity.CitizenAddress;

@@ -94,7 +94,7 @@ public class VideoServiceImpl implements VideoService {
     public Video save(Video video) {
         Optional<User> user = userService.findById(video.getUserId().getId());
 
-        if ( ! user.isPresent()) {
+        if (!user.isPresent()) {
             throw new UserNotFoundException();
         }
 

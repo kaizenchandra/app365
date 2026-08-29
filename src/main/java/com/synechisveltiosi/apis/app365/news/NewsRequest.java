@@ -1,8 +1,8 @@
 package com.synechisveltiosi.apis.app365.news;
 
-import com.synechisveltiosi.apis.app365.news.entity.News;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.synechisveltiosi.apis.app365.news.entity.News;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;

@@ -1,12 +1,11 @@
 package com.synechisveltiosi.apis.app365.common.files;
 
+import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectRequest;
-import com.amazonaws.services.s3.model.PutObjectResult;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.amazonaws.services.s3.AmazonS3;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
@@ -30,6 +29,16 @@ public class FileSystem {
     @Autowired
     private AmazonS3 s3Client;
 
+    private static File convertFromMultiPartToFile(MultipartFile multipartFile) throws IOException {
+
+        File file = new File(multipartFile.getOriginalFilename());
+        file.createNewFile();
+        FileOutputStream fos = new FileOutputStream(file);
+        fos.write(multipartFile.getBytes());
+        fos.close();
+        return file;
+    }
+
     public String store(MultipartFile multipartFile, String directory, String fileName) throws IOException, URISyntaxException {
 
         String extension = FilenameUtils.getExtension(multipartFile.getOriginalFilename());
@@ -47,15 +56,5 @@ public class FileSystem {
 
         String fileName = fullFileName.replace(String.format("%s/", DO_SPACES_ENDPOINT), "");
         s3Client.deleteObject(new DeleteObjectRequest(S3_BUCKET_NAME, fileName));
-    }
-
-    private static File convertFromMultiPartToFile(MultipartFile multipartFile) throws IOException {
-
-        File file = new File(multipartFile.getOriginalFilename());
-        file.createNewFile();
-        FileOutputStream fos = new FileOutputStream(file);
-        fos.write(multipartFile.getBytes());
-        fos.close();
-        return file;
     }
 }

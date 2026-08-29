@@ -17,36 +17,6 @@ public abstract class CandidateMapperDecorator implements CandidateMapper {
         this.mapper = mapper;
     }
 
-    @Override
-    public CandidateResponse from(Candidate candidate) {
-        CandidateResponse candidateResponse = mapper.from(candidate);
-        if (candidateResponse.getParty() != null) {
-            candidateResponse.getParty().setPosition(candidate.getCandidateFor());
-            return candidateResponse;
-        }
-
-        if (!StringUtils.isBlank(candidate.getCandidateFor()))
-            candidateResponse.setParty(new PoliticalParty().withPosition(candidate.getCandidateFor()));
-
-        return candidateResponse;
-    }
-
-    @Override
-    public CandidateResponse from(Long userId, Candidate candidate) {
-        CandidateResponse candidateResponse = mapper.from(candidate);
-
-        // Mark user likes
-        markUserLikes(userId, candidate, candidateResponse);
-
-        // Mark user share
-        markUserShare(userId, candidate, candidateResponse);
-
-        // Map de last comment
-        mapLastComment(candidate, candidateResponse);
-
-        return candidateResponse;
-    }
-
     @SuppressWarnings("Duplicates")
     private static void markUserShare(Long userId, Candidate candidate, CandidateResponse candidateResponse) {
         if (!candidate.getShares().isEmpty()) {
@@ -82,5 +52,35 @@ public abstract class CandidateMapperDecorator implements CandidateMapper {
                 candidateResponse.setMeta(new DefaultMetaResponse().withUser(new UserActionMetaResponse()));
             candidateResponse.getMeta().setLastComment(CandidateCommentMapper.INSTANCE.from(candidate.getLastComment()));
         }
+    }
+
+    @Override
+    public CandidateResponse from(Candidate candidate) {
+        CandidateResponse candidateResponse = mapper.from(candidate);
+        if (candidateResponse.getParty() != null) {
+            candidateResponse.getParty().setPosition(candidate.getCandidateFor());
+            return candidateResponse;
+        }
+
+        if (!StringUtils.isBlank(candidate.getCandidateFor()))
+            candidateResponse.setParty(new PoliticalParty().withPosition(candidate.getCandidateFor()));
+
+        return candidateResponse;
+    }
+
+    @Override
+    public CandidateResponse from(Long userId, Candidate candidate) {
+        CandidateResponse candidateResponse = mapper.from(candidate);
+
+        // Mark user likes
+        markUserLikes(userId, candidate, candidateResponse);
+
+        // Mark user share
+        markUserShare(userId, candidate, candidateResponse);
+
+        // Map de last comment
+        mapLastComment(candidate, candidateResponse);
+
+        return candidateResponse;
     }
 }

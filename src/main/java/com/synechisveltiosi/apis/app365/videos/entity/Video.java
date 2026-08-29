@@ -14,13 +14,11 @@ import java.util.UUID;
 @Table(name = "videos")
 public class Video extends BaseEntity {
 
-    private static final long serialVersionUID = 0L;
-
     public static final Integer DEFAULT_PAGE = 0;
     public static final Integer MAX_PAGE_SIZE = 25;
     public static final List<String> SORTABLE_FIELDS = Arrays.asList(Sortable.TITLE, Sortable.CREATED_AT);
     public static final List<String> SEARCHABLE_FIELDS = Arrays.asList(Searchable.TITLE, Searchable.CREATED_AT);
-
+    private static final long serialVersionUID = 0L;
     @Column(name = "video_id", nullable = false, unique = true)
     private String videoId;
 
@@ -149,14 +147,14 @@ public class Video extends BaseEntity {
         return comments;
     }
 
+    public void setComments(List<VideoComment> comments) {
+        this.comments = comments;
+    }
+
     public VideoComment getLastComment() {
         if (getComments() == null || getComments().isEmpty()) return null;
 
         return getComments().get(0);
-    }
-
-    public void setComments(List<VideoComment> comments) {
-        this.comments = comments;
     }
 
     public Date getCreatedAt() {

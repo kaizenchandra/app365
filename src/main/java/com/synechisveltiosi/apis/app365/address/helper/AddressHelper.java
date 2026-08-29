@@ -1,10 +1,9 @@
 package com.synechisveltiosi.apis.app365.address.helper;
 
-import com.applepolitical.apis.applepolitical365.address.entity.*;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.synechisveltiosi.apis.app365.address.entity.*;
 import com.synechisveltiosi.apis.app365.citizens.entity.CitizenAddress;
 import com.synechisveltiosi.apis.app365.common.dto.places.AddressResponse;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;

@@ -1,13 +1,12 @@
 package com.synechisveltiosi.apis.app365.campaign;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.synechisveltiosi.apis.app365.accounts.entity.Account;
 import com.synechisveltiosi.apis.app365.accounts.exception.AccountNotFoundException;
 import com.synechisveltiosi.apis.app365.accounts.service.AccountService;
 import com.synechisveltiosi.apis.app365.address.helper.AddressHelper;
 import com.synechisveltiosi.apis.app365.calendar.dto.ScheduleRequest;
 import com.synechisveltiosi.apis.app365.calendar.dto.ScheduleResponse;
-import com.applepolitical.apis.applepolitical365.campaign.dto.*;
-import com.applepolitical.apis.applepolitical365.campaign.entity.*;
 import com.synechisveltiosi.apis.app365.campaign.dto.*;
 import com.synechisveltiosi.apis.app365.campaign.entity.*;
 import com.synechisveltiosi.apis.app365.campaign.mapper.ScheduleRequestToScheduleMapper;
@@ -35,7 +34,6 @@ import com.synechisveltiosi.apis.app365.users.exception.UserNotFoundException;
 import com.synechisveltiosi.apis.app365.users.mapper.UserMapper;
 import com.synechisveltiosi.apis.app365.users.repository.CrmUserRepository;
 import com.synechisveltiosi.apis.app365.users.service.UserService;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

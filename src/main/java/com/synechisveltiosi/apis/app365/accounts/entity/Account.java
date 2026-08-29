@@ -19,28 +19,21 @@ import java.util.UUID;
         @TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)})
 public class Account extends BaseEntity {
 
-    private static final long serialVersionUID = 0L;
-
     public static final Integer DEFAULT_PAGE = 0;
     public static final Integer MAX_PAGE_SIZE = 25;
-
-    @Column(name = "account_id", nullable = false, unique = true)
-    private String accountId;
-
-    @Column(name = "subdomain", nullable = false, unique = true)
-    private String subdomain;
-
-    @Column(name = "verified")
-    private Boolean verified = Boolean.FALSE;
-
-    @Column(name = "status")
-    @Enumerated(EnumType.STRING)
-    private AccountStatus status;
-
+    private static final long serialVersionUID = 0L;
     @Type(type = "json")
     @Column(name = "configurations", columnDefinition = "json")
     private final AccountConfiguration configuration = new AccountConfiguration();
-
+    @Column(name = "account_id", nullable = false, unique = true)
+    private String accountId;
+    @Column(name = "subdomain", nullable = false, unique = true)
+    private String subdomain;
+    @Column(name = "verified")
+    private Boolean verified = Boolean.FALSE;
+    @Column(name = "status")
+    @Enumerated(EnumType.STRING)
+    private AccountStatus status;
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "accountId", cascade = CascadeType.ALL, optional = false)
     private AccountCandidate candidateId;
 

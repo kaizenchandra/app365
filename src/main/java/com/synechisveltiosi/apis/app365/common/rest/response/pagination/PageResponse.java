@@ -26,12 +26,12 @@ public class PageResponse<T> {
         return data;
     }
 
-    public PaginationResponse getPagination() {
-        return pagination;
-    }
-
     public void setData(List<T> data) {
         this.data = data;
+    }
+
+    public PaginationResponse getPagination() {
+        return pagination;
     }
 
     public void setPagination(PaginationResponse pagination) {

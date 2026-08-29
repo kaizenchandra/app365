@@ -1,9 +1,9 @@
 package com.synechisveltiosi.apis.app365.common.repository;
 
-import com.synechisveltiosi.apis.app365.common.util.domain.RsqlQueryUtils;
-import com.synechisveltiosi.apis.app365.common.util.domain.sort.DefaultSort;
 import com.github.tennaito.rsql.jpa.JpaCriteriaQueryVisitor;
 import com.github.tennaito.rsql.jpa.JpaPredicateVisitor;
+import com.synechisveltiosi.apis.app365.common.util.domain.RsqlQueryUtils;
+import com.synechisveltiosi.apis.app365.common.util.domain.sort.DefaultSort;
 import cz.jirutka.rsql.parser.RSQLParser;
 import cz.jirutka.rsql.parser.RSQLParserException;
 import cz.jirutka.rsql.parser.ast.Node;
@@ -24,7 +24,7 @@ public class DefaultRsqlRepository<T> implements RsqlRepository<T> {
 
     private final EntityManager entityManager;
     private final Class<T> domainClass;
-    private RSQLVisitor<CriteriaQuery<T>, EntityManager> visitor;
+    private final RSQLVisitor<CriteriaQuery<T>, EntityManager> visitor;
     private List<String> allowedFields = new ArrayList<>();
 
     public DefaultRsqlRepository(EntityManager entityManager, Class<T> domainClass) {

@@ -22,8 +22,7 @@ public class SimpleOAuth2ExceptionJackson2Deserializer extends StdDeserializer<O
     }
 
     @Override
-    public OAuth2Exception deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException,
-            JsonProcessingException {
+    public OAuth2Exception deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException {
 
         JsonToken t = jp.getCurrentToken();
         if (t == JsonToken.START_OBJECT) {

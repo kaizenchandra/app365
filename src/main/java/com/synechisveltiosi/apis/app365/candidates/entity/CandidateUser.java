@@ -13,7 +13,7 @@ public class CandidateUser implements Serializable {
     private static final long serialVersionUID = 0L;
 
     @Id
-    private CandidateUserPk id = new CandidateUserPk();
+    private final CandidateUserPk id = new CandidateUserPk();
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;

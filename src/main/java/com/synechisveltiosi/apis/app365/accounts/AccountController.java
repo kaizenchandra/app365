@@ -1,6 +1,5 @@
 package com.synechisveltiosi.apis.app365.accounts;
 
-import com.applepolitical.apis.applepolitical365.accounts.config.*;
 import com.synechisveltiosi.apis.app365.accounts.config.*;
 import com.synechisveltiosi.apis.app365.accounts.dto.AccountRequest;
 import com.synechisveltiosi.apis.app365.accounts.dto.AccountResponse;

@@ -1,9 +1,8 @@
-
 package com.synechisveltiosi.apis.app365.citizens.dto;
 
-import com.synechisveltiosi.apis.app365.common.dto.places.FlatAddressResponse;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.synechisveltiosi.apis.app365.common.dto.places.FlatAddressResponse;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;

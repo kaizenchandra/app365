@@ -9,7 +9,6 @@ import com.synechisveltiosi.apis.app365.common.rest.response.exception.BadReques
 import com.synechisveltiosi.apis.app365.common.rest.response.exception.NotModifiedException;
 import com.synechisveltiosi.apis.app365.events.EventNotFoundException;
 import com.synechisveltiosi.apis.app365.events.EventPredicates;
-import com.applepolitical.apis.applepolitical365.events.entity.*;
 import com.synechisveltiosi.apis.app365.events.entity.*;
 import com.synechisveltiosi.apis.app365.events.repository.EventRepository;
 import com.synechisveltiosi.apis.app365.users.entity.User;
@@ -117,7 +116,7 @@ public class EventServiceImpl implements EventService {
 
         Optional<User> user = userService.findById(event.getUserId().getId());
 
-        if ( ! user.isPresent()) {
+        if (!user.isPresent()) {
             throw new UserNotFoundException();
         }
 

@@ -4,13 +4,10 @@ import com.synechisveltiosi.apis.app365.accounts.config.CrmConfig;
 import com.synechisveltiosi.apis.app365.accounts.entity.Account;
 import com.synechisveltiosi.apis.app365.accounts.exception.AccountNotFoundException;
 import com.synechisveltiosi.apis.app365.accounts.service.AccountService;
-import com.applepolitical.apis.applepolitical365.address.entity.*;
-import com.applepolitical.apis.applepolitical365.address.service.*;
 import com.synechisveltiosi.apis.app365.address.entity.*;
 import com.synechisveltiosi.apis.app365.address.service.*;
 import com.synechisveltiosi.apis.app365.common.auth.dto.AccessToken;
 import com.synechisveltiosi.apis.app365.common.auth.repository.CrmOAuth2Repository;
-import com.applepolitical.apis.applepolitical365.common.dto.places.*;
 import com.synechisveltiosi.apis.app365.common.dto.places.*;
 import com.synechisveltiosi.apis.app365.common.http.request.HttpHeader;
 import com.synechisveltiosi.apis.app365.common.rest.response.exception.BadRequestException;
@@ -97,9 +94,10 @@ public class CountryController {
     }
 
     @GetMapping(value = "/{id}/states", consumes = MediaType.ALL_VALUE)
-    public ResponseEntity<?> getStates(@PathVariable @NotBlank String id) throws IOException  {
+    public ResponseEntity<?> getStates(@PathVariable @NotBlank String id) throws IOException {
 
-        if (isEnableCrmUse()) return fetch(appConfig.getCrm().getGetEndpoints().getAddress().getStates().replace("{id}", id));
+        if (isEnableCrmUse())
+            return fetch(appConfig.getCrm().getGetEndpoints().getAddress().getStates().replace("{id}", id));
 
         return ResponseEntity.ok(stateResponseMapper.map(stateService.findAll(id)));
     }
@@ -109,10 +107,10 @@ public class CountryController {
 
         if (isEnableCrmUse()) return fetch(
                 appConfig.getCrm()
-                .getGetEndpoints()
-                .getAddress()
-                .getDistrictByCountry()
-                .replace("{id}", id)
+                        .getGetEndpoints()
+                        .getAddress()
+                        .getDistrictByCountry()
+                        .replace("{id}", id)
         );
 
         throw new BadRequestException();
@@ -223,15 +221,17 @@ public class CountryController {
     @GetMapping(value = "/states/{id}/municipalities", consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> getMunicipalities(@PathVariable @NotBlank String id) throws IOException {
 
-        if (isEnableCrmUse()) return fetch(appConfig.getCrm().getGetEndpoints().getAddress().getMunicipalities().replace("{id}", id));
+        if (isEnableCrmUse())
+            return fetch(appConfig.getCrm().getGetEndpoints().getAddress().getMunicipalities().replace("{id}", id));
 
         return ResponseEntity.ok(municipalityResponseMapper.map(municipalityService.findAll(id)));
     }
 
     @GetMapping(value = "/states/municipalities/{id}/cities", consumes = MediaType.ALL_VALUE)
-    public ResponseEntity<?> getCities(@PathVariable @NotBlank String id) throws IOException  {
+    public ResponseEntity<?> getCities(@PathVariable @NotBlank String id) throws IOException {
 
-        if (isEnableCrmUse()) return fetch(appConfig.getCrm().getGetEndpoints().getAddress().getCities().replace("{id}", id));
+        if (isEnableCrmUse())
+            return fetch(appConfig.getCrm().getGetEndpoints().getAddress().getCities().replace("{id}", id));
 
         return ResponseEntity.ok(cityResponseMapper.map(cityService.findAll(id)));
     }
@@ -239,15 +239,17 @@ public class CountryController {
     @GetMapping(value = "/states/municipalities/cities/{id}/sectors")
     public ResponseEntity<?> getSections(@PathVariable @NotBlank String id) throws IOException {
 
-        if (isEnableCrmUse()) return fetch(appConfig.getCrm().getGetEndpoints().getAddress().getSections().replace("{id}", id));
+        if (isEnableCrmUse())
+            return fetch(appConfig.getCrm().getGetEndpoints().getAddress().getSections().replace("{id}", id));
 
         return ResponseEntity.ok(sectorResponseMapper.map(sectorService.findAll(id)));
     }
 
     @GetMapping(value = "/states/municipalities/cities/sectors/{id}/demarcation", consumes = MediaType.ALL_VALUE)
-    public ResponseEntity<?> getSectors(@PathVariable @NotBlank String id) throws IOException  {
+    public ResponseEntity<?> getSectors(@PathVariable @NotBlank String id) throws IOException {
 
-        if (isEnableCrmUse()) return fetch(appConfig.getCrm().getGetEndpoints().getAddress().getSectors().replace("{id}", id));
+        if (isEnableCrmUse())
+            return fetch(appConfig.getCrm().getGetEndpoints().getAddress().getSectors().replace("{id}", id));
 
         return ResponseEntity.ok(sectorResponseMapper.map(new ArrayList<>()));
     }
@@ -256,10 +258,7 @@ public class CountryController {
         Optional<Account> accountOptional = accountService.findBySubdomain(httpHeader.getTenantId());
         Account account = accountOptional.orElseThrow(AccountNotFoundException::new);
 
-        if (account.getConfiguration().isEnableCrmUse()) {
-            return true;
-        }
-        return false;
+        return account.getConfiguration().isEnableCrmUse();
     }
 
     private ResponseEntity<?> fetch(String url) throws IOException {
@@ -274,7 +273,7 @@ public class CountryController {
         Request.Builder requestBuilder = new Request.Builder()
                 .url(crmConfig.getBaseUrl() + url)
                 .addHeader(HttpHeaders.AUTHORIZATION, accessToken.prepareAccessToken())
-                .addHeader("X-TenantID",crmConfig.getTenantId());
+                .addHeader("X-TenantID", crmConfig.getTenantId());
 
         Response response = client.newCall(requestBuilder.build()).execute();
 
@@ -302,7 +301,7 @@ public class CountryController {
                 throw new ServiceUnavailableException();
             default:
                 String message = "Unhandled http code";
-                logger.error(message + ". OAuth response: " + response.toString());
+                logger.error(message + ". OAuth response: " + response);
                 throw new NotAcceptableException(message);
 
         }

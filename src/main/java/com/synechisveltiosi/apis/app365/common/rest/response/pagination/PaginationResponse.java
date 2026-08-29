@@ -1,4 +1,3 @@
-
 package com.synechisveltiosi.apis.app365.common.rest.response.pagination;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -25,6 +24,16 @@ public class PaginationResponse {
 
     @JsonProperty("numberOfElements")
     private Integer numberOfElements;
+
+    public static PaginationResponse from(Page page) {
+        return PaginationResponseBuilder.builder()
+                .withPage(page.getNumber())
+                .withSize(page.getSize())
+                .withNumberOfElements(page.getNumberOfElements())
+                .withTotalPages(page.getTotalPages())
+                .withTotalElements(page.getTotalElements())
+                .build();
+    }
 
     public Integer getTotalPages() {
         return totalPages;
@@ -89,16 +98,6 @@ public class PaginationResponse {
     public PaginationResponse withNumberOfElements(Integer numberOfElements) {
         this.numberOfElements = numberOfElements;
         return this;
-    }
-
-    public static PaginationResponse from(Page page) {
-        return PaginationResponseBuilder.builder()
-                .withPage(page.getNumber())
-                .withSize(page.getSize())
-                .withNumberOfElements(page.getNumberOfElements())
-                .withTotalPages(page.getTotalPages())
-                .withTotalElements(page.getTotalElements())
-                .build();
     }
 
     @Override

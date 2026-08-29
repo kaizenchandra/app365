@@ -24,8 +24,6 @@ import java.util.*;
         @TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)})
 public class User extends BaseEntity {
 
-    private static final long serialVersionUID = 0L;
-
     public static final Integer DEFAULT_PAGE = 0;
     public static final Integer MAX_PAGE_SIZE = 25;
     public static final List<String> SORTABLE_FIELDS = Arrays.asList(Sortable.FIRST_NAME, Sortable.LAST_NAME,
@@ -34,7 +32,7 @@ public class User extends BaseEntity {
             Searchable.EMAIL);
     public static final List<String> PATCHABLE_FIELDS = Arrays.asList(Patchable.FIRST_NAME, Patchable.LAST_NAME,
             Patchable.NICKNAME, Patchable.ID_CARD, Patchable.EMAIL, Patchable.PHONE, Patchable.ADDRESS);
-
+    private static final long serialVersionUID = 0L;
     @Column(name = "user_id", unique = true)
     private String userId;
 
@@ -231,7 +229,7 @@ public class User extends BaseEntity {
     }
 
     public Boolean isEmailVerified() {
-        return (emailVerified != null && emailVerified == Boolean.TRUE) ? Boolean.TRUE : Boolean.FALSE;
+        return (emailVerified != null && emailVerified) ? Boolean.TRUE : Boolean.FALSE;
     }
 
     public void setEmailVerified(Boolean emailVerified) {
@@ -448,30 +446,6 @@ public class User extends BaseEntity {
         updatedAt = new Date();
     }
 
-    public interface Sortable {
-        String FIRST_NAME = "firstName";
-        String LAST_NAME = "lastName";
-        String EMAIL = "email";
-        String CREATED_AT = "createdAt";
-        String DEFAULT_SORT = "+" + FIRST_NAME + ",+" + LAST_NAME;
-    }
-
-    public interface Searchable {
-        String FIRST_NAME = "firstName";
-        String LAST_NAME = "lastName";
-        String EMAIL = "email";
-    }
-
-    public interface Patchable {
-        String FIRST_NAME = "firstName";
-        String LAST_NAME = "lastName";
-        String NICKNAME = "nickname";
-        String ID_CARD = "idCard";
-        String EMAIL = "email";
-        String PHONE = "phone";
-        String ADDRESS = "address";
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -542,5 +516,29 @@ public class User extends BaseEntity {
                 .append(verified)
                 .append(active)
                 .toHashCode();
+    }
+
+    public interface Sortable {
+        String FIRST_NAME = "firstName";
+        String LAST_NAME = "lastName";
+        String EMAIL = "email";
+        String CREATED_AT = "createdAt";
+        String DEFAULT_SORT = "+" + FIRST_NAME + ",+" + LAST_NAME;
+    }
+
+    public interface Searchable {
+        String FIRST_NAME = "firstName";
+        String LAST_NAME = "lastName";
+        String EMAIL = "email";
+    }
+
+    public interface Patchable {
+        String FIRST_NAME = "firstName";
+        String LAST_NAME = "lastName";
+        String NICKNAME = "nickname";
+        String ID_CARD = "idCard";
+        String EMAIL = "email";
+        String PHONE = "phone";
+        String ADDRESS = "address";
     }
 }

@@ -1,8 +1,8 @@
 package com.synechisveltiosi.apis.app365.campaign;
 
-import com.synechisveltiosi.apis.app365.campaign.entity.Task;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.synechisveltiosi.apis.app365.campaign.entity.Task;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;

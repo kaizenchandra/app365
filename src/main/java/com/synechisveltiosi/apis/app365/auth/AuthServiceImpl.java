@@ -1,5 +1,9 @@
 package com.synechisveltiosi.apis.app365.auth;
 
+import com.google.common.collect.Lists;
+import com.google.gson.FieldNamingPolicy;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.synechisveltiosi.apis.app365.common.auth.dto.AccessToken;
 import com.synechisveltiosi.apis.app365.common.auth.repository.OAuth2Repository;
 import com.synechisveltiosi.apis.app365.common.messaging.email.DefaultEmailMessageBuilder;
@@ -13,10 +17,6 @@ import com.synechisveltiosi.apis.app365.devices.DeviceService;
 import com.synechisveltiosi.apis.app365.users.entity.User;
 import com.synechisveltiosi.apis.app365.users.exception.UserNotFoundException;
 import com.synechisveltiosi.apis.app365.users.service.UserService;
-import com.google.common.collect.Lists;
-import com.google.gson.FieldNamingPolicy;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import okhttp3.*;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;

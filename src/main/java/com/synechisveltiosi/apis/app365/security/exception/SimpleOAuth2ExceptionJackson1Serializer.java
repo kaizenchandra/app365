@@ -13,8 +13,7 @@ import java.util.Map;
 public class SimpleOAuth2ExceptionJackson1Serializer extends JsonSerializer<OAuth2Exception> {
 
     @Override
-    public void serialize(OAuth2Exception value, JsonGenerator jgen, SerializerProvider provider) throws IOException,
-            JsonProcessingException {
+    public void serialize(OAuth2Exception value, JsonGenerator jgen, SerializerProvider provider) throws IOException {
         jgen.writeStartObject();
         jgen.writeNumberField("status", value.getHttpErrorCode());
         jgen.writeStringField("type", value.getOAuth2ErrorCode());

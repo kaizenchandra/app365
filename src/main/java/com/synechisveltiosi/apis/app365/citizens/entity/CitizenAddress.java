@@ -1,6 +1,5 @@
 package com.synechisveltiosi.apis.app365.citizens.entity;
 
-import com.applepolitical.apis.applepolitical365.address.entity.*;
 import com.synechisveltiosi.apis.app365.address.entity.*;
 import com.synechisveltiosi.apis.app365.common.entity.base.BaseEntity;
 

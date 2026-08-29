@@ -1,4 +1,3 @@
-
 package com.synechisveltiosi.apis.app365.common.dto.places;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -162,6 +161,10 @@ public class FlatAddressResponse {
         return fullAddress;
     }
 
+    public void setFullAddress(String fullAddress) {
+        this.fullAddress = fullAddress;
+    }
+
     public String buildFullAddress() {
         fullAddress = StringUtils.join(
                 new String[]{line1,
@@ -172,10 +175,6 @@ public class FlatAddressResponse {
                         StringUtils.isNotEmpty(country) ? country : ""},
                 ",");
         return fullAddress;
-    }
-
-    public void setFullAddress(String fullAddress) {
-        this.fullAddress = fullAddress;
     }
 
     public FlatAddressResponse withFullAddress(String fullAddress) {

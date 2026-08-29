@@ -1,7 +1,7 @@
 package com.synechisveltiosi.apis.app365.accounts.config;
 
-import com.synechisveltiosi.apis.app365.common.SocialNetworkProvider;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.synechisveltiosi.apis.app365.common.SocialNetworkProvider;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -70,9 +70,7 @@ public class SocialTokenConfig implements Serializable {
 
     @JsonIgnore
     public boolean isValid() {
-        if (provider != null && !StringUtils.isBlank(accessToken)) return true;
-
-        return false;
+        return provider != null && !StringUtils.isBlank(accessToken);
     }
 
     @Override

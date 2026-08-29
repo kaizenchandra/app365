@@ -1,14 +1,14 @@
 package com.synechisveltiosi.apis.app365.common.sms.service.twilio;
 
+import com.authy.AuthyApiClient;
+import com.authy.AuthyException;
+import com.authy.api.Params;
+import com.authy.api.Verification;
 import com.synechisveltiosi.apis.app365.common.rest.response.exception.BadRequestException;
 import com.synechisveltiosi.apis.app365.common.sms.PhoneVerification;
 import com.synechisveltiosi.apis.app365.common.sms.PhoneVerificationException;
 import com.synechisveltiosi.apis.app365.common.sms.PhoneVerificationService;
 import com.synechisveltiosi.apis.app365.users.entity.User;
-import com.authy.AuthyApiClient;
-import com.authy.AuthyException;
-import com.authy.api.Params;
-import com.authy.api.Verification;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,7 +20,7 @@ public class TwilioPhoneVerificationService implements PhoneVerificationService 
 
     private static final Logger logger = LoggerFactory.getLogger(TwilioPhoneVerificationService.class);
 
-    private AuthyApiClient authyApiClient;
+    private final AuthyApiClient authyApiClient;
 
     @Autowired
     public TwilioPhoneVerificationService(AuthyApiClient authyApiClient) {

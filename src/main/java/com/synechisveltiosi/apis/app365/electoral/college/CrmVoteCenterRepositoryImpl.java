@@ -1,15 +1,14 @@
 package com.synechisveltiosi.apis.app365.electoral.college;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.synechisveltiosi.apis.app365.accounts.config.CrmConfig;
 import com.synechisveltiosi.apis.app365.accounts.entity.Account;
 import com.synechisveltiosi.apis.app365.accounts.helpers.AccountHelper;
 import com.synechisveltiosi.apis.app365.common.auth.dto.AccessToken;
 import com.synechisveltiosi.apis.app365.common.auth.repository.CrmOAuth2Repository;
-import com.applepolitical.apis.applepolitical365.common.rest.response.exception.*;
 import com.synechisveltiosi.apis.app365.common.rest.response.exception.*;
 import com.synechisveltiosi.apis.app365.config.AppConfig;
 import com.synechisveltiosi.apis.app365.electoral.college.dto.VoteCenterResponse;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -114,7 +113,7 @@ public class CrmVoteCenterRepositoryImpl implements CrmVoteCenterRepository {
                 break;
             default:
                 String message = "Unhandled http code";
-                logger.error(message + ". OAuth response: " + response.toString());
+                logger.error(message + ". OAuth response: " + response);
         }
 
         return exception;

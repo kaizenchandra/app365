@@ -12,37 +12,25 @@ import java.time.LocalDateTime;
 @Table(name = "broadcasts")
 public class Broadcast extends BaseEntity {
 
-    public enum Status {
-        PENDING, PROCESSING, FAILED, SENT
-    }
-
     private static final long serialVersionUID = 0L;
-
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
     @Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE})
     @JoinColumn(name = "user_id", nullable = false)
     private User userId;
-
     @Column(name = "title")
     private String title;
-
     @Column(name = "content", columnDefinition = "text")
     private String content;
-
     @Column(name = "target")
     @Enumerated(EnumType.STRING)
     private NotificationTarget target;
-
     @Column(name = "status", nullable = false)
     @Enumerated(EnumType.STRING)
     private Status status;
-
     @Column(name = "created_at")
     private LocalDateTime createdAt;
-
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
-
     @Column(name = "active")
     private Boolean active;
 
@@ -118,5 +106,9 @@ public class Broadcast extends BaseEntity {
     @PreUpdate
     public void preUpdate() {
         updatedAt = LocalDateTime.now();
+    }
+
+    public enum Status {
+        PENDING, PROCESSING, FAILED, SENT
     }
 }

@@ -45,6 +45,10 @@ public class VideoSummary extends BaseEntity {
         return shareCount;
     }
 
+    public void setShareCount(Long shareCount) {
+        this.shareCount = shareCount;
+    }
+
     public void increaseShareCount() {
         this.shareCount++;
     }
@@ -53,12 +57,12 @@ public class VideoSummary extends BaseEntity {
         this.shareCount--;
     }
 
-    public void setShareCount(Long shareCount) {
-        this.shareCount = shareCount;
-    }
-
     public Long getCommentCount() {
         return commentCount;
+    }
+
+    public void setCommentCount(Long commentCount) {
+        this.commentCount = commentCount;
     }
 
     public void increaseCommentCount() {
@@ -69,12 +73,12 @@ public class VideoSummary extends BaseEntity {
         this.commentCount--;
     }
 
-    public void setCommentCount(Long commentCount) {
-        this.commentCount = commentCount;
-    }
-
     public Long getLikeCount() {
         return likeCount;
+    }
+
+    public void setLikeCount(Long likeCount) {
+        this.likeCount = likeCount;
     }
 
     public void increaseLikeCount() {
@@ -83,10 +87,6 @@ public class VideoSummary extends BaseEntity {
 
     public void decreaseLikeCount() {
         this.likeCount--;
-    }
-
-    public void setLikeCount(Long likeCount) {
-        this.likeCount = likeCount;
     }
 
     public Date getLastShareAt() {

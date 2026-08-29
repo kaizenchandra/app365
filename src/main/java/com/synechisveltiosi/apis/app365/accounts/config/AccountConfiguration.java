@@ -1,7 +1,7 @@
 package com.synechisveltiosi.apis.app365.accounts.config;
 
-import com.synechisveltiosi.apis.app365.common.SocialNetworkProvider;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.synechisveltiosi.apis.app365.common.SocialNetworkProvider;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.Serializable;
@@ -11,24 +11,18 @@ import java.util.List;
 public class AccountConfiguration implements Serializable {
 
     private static final long serialVersionUID = 0L;
-
-    @JsonProperty("enableCrmUse")
-    private Boolean enableCrmUse;
-
-    @JsonProperty("crm")
-    private CrmConfig crmConfig;
-
-    @JsonProperty("mail")
-    private MailConfig mailConfig;
-
     @JsonProperty("apiTokens")
     private final List<ApiTokenConfig> apiTokenConfigs = new ArrayList<>();
-
     @JsonProperty("database")
     private final List<DatabaseConfig> databaseConfigs = new ArrayList<>();
-
     @JsonProperty("socialTokens")
     private final List<SocialTokenConfig> socialTokenConfigs = new ArrayList<>();
+    @JsonProperty("enableCrmUse")
+    private Boolean enableCrmUse;
+    @JsonProperty("crm")
+    private CrmConfig crmConfig;
+    @JsonProperty("mail")
+    private MailConfig mailConfig;
 
     public Boolean isEnableCrmUse() {
         return enableCrmUse != null && enableCrmUse;

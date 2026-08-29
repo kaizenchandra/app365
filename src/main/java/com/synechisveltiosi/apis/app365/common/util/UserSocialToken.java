@@ -1,8 +1,8 @@
 package com.synechisveltiosi.apis.app365.common.util;
 
-import com.synechisveltiosi.apis.app365.common.SocialNetworkProvider;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.synechisveltiosi.apis.app365.common.SocialNetworkProvider;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -16,7 +16,7 @@ public class UserSocialToken implements Serializable {
 
     @JsonProperty("channel")
     private SocialNetworkProvider provider;
-    
+
     private String token;
 
     public SocialNetworkProvider getProvider() {
@@ -37,9 +37,7 @@ public class UserSocialToken implements Serializable {
 
     @JsonIgnore
     public boolean isValid() {
-        if (provider != null && !StringUtils.isBlank(token)) return true;
-
-        return false;
+        return provider != null && !StringUtils.isBlank(token);
     }
 
     @Override

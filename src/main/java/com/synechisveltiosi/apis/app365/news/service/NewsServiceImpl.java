@@ -99,7 +99,7 @@ public class NewsServiceImpl implements NewsService {
 
         Optional<User> user = userService.findById(news.getUserId().getId());
 
-        if ( ! user.isPresent()) {
+        if (!user.isPresent()) {
             throw new UserNotFoundException();
         }
 

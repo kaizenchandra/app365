@@ -42,10 +42,7 @@ public class ApiTokenConfig implements Serializable {
 
     @JsonIgnore
     public boolean isValid() {
-        if (!StringUtils.isBlank(service) && !StringUtils.isBlank(appId) && !StringUtils.isBlank(appSecret))
-            return true;
-
-        return false;
+        return !StringUtils.isBlank(service) && !StringUtils.isBlank(appId) && !StringUtils.isBlank(appSecret);
     }
 
     @Override

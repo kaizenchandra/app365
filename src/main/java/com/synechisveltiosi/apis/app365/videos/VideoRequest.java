@@ -1,8 +1,8 @@
 package com.synechisveltiosi.apis.app365.videos;
 
-import com.synechisveltiosi.apis.app365.videos.entity.Video;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.synechisveltiosi.apis.app365.videos.entity.Video;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
